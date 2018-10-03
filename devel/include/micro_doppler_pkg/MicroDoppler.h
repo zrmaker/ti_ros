@@ -28,12 +28,14 @@ struct MicroDoppler_
     : header()
     , time_domain_bins(0)
     , num_chirps(0)
+    , target_idx(0)
     , micro_doppler_array()  {
     }
   MicroDoppler_(const ContainerAllocator& _alloc)
     : header(_alloc)
     , time_domain_bins(0)
     , num_chirps(0)
+    , target_idx(0)
     , micro_doppler_array(_alloc)  {
   (void)_alloc;
     }
@@ -48,6 +50,9 @@ struct MicroDoppler_
 
    typedef uint16_t _num_chirps_type;
   _num_chirps_type num_chirps;
+
+   typedef uint8_t _target_idx_type;
+  _target_idx_type target_idx;
 
    typedef std::vector<float, typename ContainerAllocator::template rebind<float>::other >  _micro_doppler_array_type;
   _micro_doppler_array_type micro_doppler_array;
@@ -130,12 +135,12 @@ struct MD5Sum< ::micro_doppler_pkg::MicroDoppler_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "960f466c8989e7496b5722e5279986ae";
+    return "9f59589feb32f7e46fa75d33dbd81913";
   }
 
   static const char* value(const ::micro_doppler_pkg::MicroDoppler_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x960f466c8989e749ULL;
-  static const uint64_t static_value2 = 0x6b5722e5279986aeULL;
+  static const uint64_t static_value1 = 0x9f59589feb32f7e4ULL;
+  static const uint64_t static_value2 = 0x6fa75d33dbd81913ULL;
 };
 
 template<class ContainerAllocator>
@@ -157,6 +162,7 @@ struct Definition< ::micro_doppler_pkg::MicroDoppler_<ContainerAllocator> >
     return "Header header\n\
 uint16 time_domain_bins\n\
 uint16 num_chirps\n\
+uint8 target_idx\n\
 float32[] micro_doppler_array\n\
 ================================================================================\n\
 MSG: std_msgs/Header\n\
@@ -196,6 +202,7 @@ namespace serialization
       stream.next(m.header);
       stream.next(m.time_domain_bins);
       stream.next(m.num_chirps);
+      stream.next(m.target_idx);
       stream.next(m.micro_doppler_array);
     }
 
@@ -222,6 +229,8 @@ struct Printer< ::micro_doppler_pkg::MicroDoppler_<ContainerAllocator> >
     Printer<uint16_t>::stream(s, indent + "  ", v.time_domain_bins);
     s << indent << "num_chirps: ";
     Printer<uint16_t>::stream(s, indent + "  ", v.num_chirps);
+    s << indent << "target_idx: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.target_idx);
     s << indent << "micro_doppler_array[]" << std::endl;
     for (size_t i = 0; i < v.micro_doppler_array.size(); ++i)
     {
