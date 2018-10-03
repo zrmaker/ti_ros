@@ -1,0 +1,2 @@
+set(mds_cnn_node_pkg_MESSAGE_FILES "/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg")
+set(mds_cnn_node_pkg_SERVICE_FILES "")

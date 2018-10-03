@@ -1,0 +1,8 @@
+prefix=/home/ece561/Projects/ti_ros/install
+
+Name: serial
+Description: Description of serial
+Version: 1.2.1
+Cflags: -I/home/ece561/Projects/ti_ros/install/include
+Libs: -L/home/ece561/Projects/ti_ros/install/lib -lserial -lrt -lpthread
+Requires: 

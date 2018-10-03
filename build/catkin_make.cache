@@ -1,0 +1,2 @@
+micro_doppler_pkg:serial:ti-mmwave-mds-cnn:ti_mmwave_rospkg
+-DCATKIN_DEVEL_PREFIX=/home/ece561/Projects/ti_ros/devel -DCMAKE_INSTALL_PREFIX=/home/ece561/Projects/ti_ros/install -G Unix Makefiles

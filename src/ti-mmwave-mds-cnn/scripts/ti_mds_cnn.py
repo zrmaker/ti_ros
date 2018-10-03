@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 
 class mds_dl:
 	def __init__(self):
-		self.directory = '/home/fengjin/database/'
+		self.directory = '/home/ece561/database/'
 		self.test_file = './output/test.csv'
 		self.nd = 128
 		self.time_domain_bins = 20
