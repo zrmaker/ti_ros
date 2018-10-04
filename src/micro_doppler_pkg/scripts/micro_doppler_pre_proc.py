@@ -44,7 +44,11 @@ class micro_doppler_signature_proc:
             mds_array = np.array(msg_handle.micro_doppler_array).reshape((nd, time_domain_bins))
             # mds_array[int(nd/2),] = 0
             plt.imshow(mds_array)
-            plt.pause(.00001)
+            print(str(msg_handle.header.stamp.secs) + '.' + str(msg_handle.header.stamp.nsecs))
+            # plt.pause(.00001)
+            if plt.waitforbuttonpress(.00001) == True:
+                while plt.waitforbuttonpress() :
+                    break
 
     def save_to_csv(self):
         for msg in self.bag.read_messages(topics=['/ti_mmwave/micro_doppler']):
@@ -86,7 +90,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     bag = vars(args)['bag']
     label = vars(args)['label']
-    # micro_doppler_signature_proc(bag, label).read_plot_mds_all()
-    micro_doppler_signature_proc(bag, label).read_plot_mds_array()
+    micro_doppler_signature_proc(bag, label).read_plot_mds_all()
+    # micro_doppler_signature_proc(bag, label).read_plot_mds_array()
     # micro_doppler_signature_proc(bag, label).save_to_csv()
     # micro_doppler_signature_proc(bag, label).main()

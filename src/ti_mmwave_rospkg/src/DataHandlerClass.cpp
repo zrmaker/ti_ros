@@ -391,7 +391,7 @@ void *DataUARTHandler::sortIncomingData( void )
 
                 radarscan_cf[i].point_id    = i;
                 radarscan_cf[i].x           = radarscan_cf[i].range * cos(radarscan_cf[i].bearing);
-                radarscan_cf[i].y           = radarscan_cf[i].range * sin(radarscan_cf[i].bearing);
+                radarscan_cf[i].y           = -radarscan_cf[i].range * sin(radarscan_cf[i].bearing);
                 radarscan_cf[i].z           = 0;
                 velocityRes                 = 3.0e8 / (2.0 * nd * 2 * fc_chirp * PRI);
                 dopplerRes                  = velocityRes;

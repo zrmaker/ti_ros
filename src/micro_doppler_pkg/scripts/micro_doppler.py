@@ -23,42 +23,74 @@ class micro_doppler_signature:
         else:
             self.nd = nd
 
-        self.mds_array = np.zeros((self.nd, self.time_domain_bins))
+        self.mds_array = np.zeros((self.nd, self.time_domain_bins, 253))
         self.prev_id = 0
-        self.mds_cur = np.zeros(self.nd)  
+        self.tmp_data = np.empty((4,0))
 
     def ti_doppler_parser(self, radar):
         if radar.point_id < self.prev_id:
             self.micro_doppler()
         self.prev_id = radar.point_id
-        # range compensation
-        temp = radar.intensity * radar.range**2
-        self.mds_cur[radar.doppler_bin] += temp
+        if radar.target_idx < 253:
+            tmp = np.array([radar.target_idx, radar.range, radar.doppler_bin, radar.intensity])
+            self.tmp_data = np.append(self.tmp_data, tmp.reshape((-1,1)), axis = 1)
+        
 
     def micro_doppler(self):
-        # remove static clutter
-        # self.mds_cur[int(self.nd/2)] = 0
-        # normalize every micro-doppler signature
-        temp = max(self.mds_cur)
-        if temp != 0:
-            mds_norm = self.mds_cur / temp
-        else:
-            mds_norm = self.mds_cur
-        temp1 = np.delete(self.mds_array, 0, 1)
-        temp2 = np.transpose([mds_norm])
-        self.mds_array = np.append(temp1, temp2, axis=1)
-        mds_list = self.mds_array.flatten().tolist()
-        
-        # publish msg
-        mds_msg = MicroDoppler()
-        mds_msg.header.frame_id = self.frame_id
-        mds_msg.header.stamp = rospy.Time.now()
-        mds_msg.time_domain_bins = self.time_domain_bins
-        mds_msg.num_chirps = self.nd
-        mds_msg.micro_doppler_array = mds_list
-        self.pub_.publish(mds_msg)
+        targets = np.array(np.int_(np.unique(self.tmp_data[0,:])))
+        mds_cur = np.zeros((targets.size,self.nd))
+        for i in range(self.tmp_data.shape[1]):
+            tmp = np.where(targets == int(self.tmp_data[0,i]))
+            # range compensation
+            mds_cur[tmp[0][0],int(self.tmp_data[2,i])] += self.tmp_data[3,i] * self.tmp_data[1,i]**2
 
-        self.mds_cur = np.zeros(self.nd)
+        if targets.size > 1:
+            for i in range(targets.size):
+                tmp = mds_cur[i,:].flatten()
+                # normalize every micro-doppler signature
+                temp = max(tmp)
+                if temp != 0:
+                    mds_norm = tmp / temp
+                else:
+                    mds_norm = tmp
+                temp1 = np.delete(self.mds_array[:,:,targets[i]], 0, 1)
+                temp2 = np.transpose([mds_norm])
+                self.mds_array[:,:,targets[i]] = np.append(temp1, temp2, axis=1)
+                mds_list = self.mds_array[:,:,targets[i]].flatten().tolist()
+                
+                # publish msg
+                mds_msg = MicroDoppler()
+                mds_msg.header.frame_id = self.frame_id
+                mds_msg.header.stamp = rospy.Time.now()
+                mds_msg.time_domain_bins = self.time_domain_bins
+                mds_msg.num_chirps = self.nd
+                mds_msg.target_idx = targets[i]
+                mds_msg.micro_doppler_array = mds_list
+                self.pub_.publish(mds_msg)
+        elif targets.size == 1:
+            tmp = mds_cur[0,:].flatten()
+            # normalize every micro-doppler signature
+            temp = max(tmp)
+            if temp != 0:
+                mds_norm = tmp / temp
+            else:
+                mds_norm = tmp
+            temp1 = np.delete(self.mds_array[:,:,targets], 0, 1)
+            temp2 = np.transpose([mds_norm])
+            self.mds_array[:,:,targets] = np.append(temp1, temp2, axis=1)
+            mds_list = self.mds_array[:,:,targets].flatten().tolist()
+            
+            # publish msg
+            mds_msg = MicroDoppler()
+            mds_msg.header.frame_id = self.frame_id
+            mds_msg.header.stamp = rospy.Time.now()
+            mds_msg.time_domain_bins = self.time_domain_bins
+            mds_msg.num_chirps = self.nd
+            mds_msg.target_idx = targets
+            mds_msg.micro_doppler_array = mds_list
+            self.pub_.publish(mds_msg)
+
+        self.tmp_data = np.empty((4,0))
 
     def main(self):
         rospy.init_node('micro_doppler_node')
@@ -78,5 +110,3 @@ if __name__ == '__main__':
     args = parser.parse_args()
     nd = vars(args)['num_chirps']
     micro_doppler_signature(nd, host_velocity=0).main()
-    
-    

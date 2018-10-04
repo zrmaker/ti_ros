@@ -22,6 +22,11 @@
     :initarg :num_chirps
     :type cl:fixnum
     :initform 0)
+   (target_idx
+    :reader target_idx
+    :initarg :target_idx
+    :type cl:fixnum
+    :initform 0)
    (micro_doppler_array
     :reader micro_doppler_array
     :initarg :micro_doppler_array
@@ -52,6 +57,11 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader micro_doppler_pkg-msg:num_chirps-val is deprecated.  Use micro_doppler_pkg-msg:num_chirps instead.")
   (num_chirps m))
 
+(cl:ensure-generic-function 'target_idx-val :lambda-list '(m))
+(cl:defmethod target_idx-val ((m <MicroDoppler>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader micro_doppler_pkg-msg:target_idx-val is deprecated.  Use micro_doppler_pkg-msg:target_idx instead.")
+  (target_idx m))
+
 (cl:ensure-generic-function 'micro_doppler_array-val :lambda-list '(m))
 (cl:defmethod micro_doppler_array-val ((m <MicroDoppler>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader micro_doppler_pkg-msg:micro_doppler_array-val is deprecated.  Use micro_doppler_pkg-msg:micro_doppler_array instead.")
@@ -63,6 +73,7 @@
   (cl:write-byte (cl:ldb (cl:byte 8 8) (cl:slot-value msg 'time_domain_bins)) ostream)
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'num_chirps)) ostream)
   (cl:write-byte (cl:ldb (cl:byte 8 8) (cl:slot-value msg 'num_chirps)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'target_idx)) ostream)
   (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'micro_doppler_array))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
@@ -82,6 +93,7 @@
     (cl:setf (cl:ldb (cl:byte 8 8) (cl:slot-value msg 'time_domain_bins)) (cl:read-byte istream))
     (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'num_chirps)) (cl:read-byte istream))
     (cl:setf (cl:ldb (cl:byte 8 8) (cl:slot-value msg 'num_chirps)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'target_idx)) (cl:read-byte istream))
   (cl:let ((__ros_arr_len 0))
     (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
     (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
@@ -106,21 +118,22 @@
   "micro_doppler_pkg/MicroDoppler")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<MicroDoppler>)))
   "Returns md5sum for a message object of type '<MicroDoppler>"
-  "960f466c8989e7496b5722e5279986ae")
+  "9f59589feb32f7e46fa75d33dbd81913")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'MicroDoppler)))
   "Returns md5sum for a message object of type 'MicroDoppler"
-  "960f466c8989e7496b5722e5279986ae")
+  "9f59589feb32f7e46fa75d33dbd81913")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<MicroDoppler>)))
   "Returns full string definition for message of type '<MicroDoppler>"
-  (cl:format cl:nil "Header header~%uint16 time_domain_bins~%uint16 num_chirps~%float32[] micro_doppler_array~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%uint16 time_domain_bins~%uint16 num_chirps~%uint8 target_idx~%float32[] micro_doppler_array~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'MicroDoppler)))
   "Returns full string definition for message of type 'MicroDoppler"
-  (cl:format cl:nil "Header header~%uint16 time_domain_bins~%uint16 num_chirps~%float32[] micro_doppler_array~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%uint16 time_domain_bins~%uint16 num_chirps~%uint8 target_idx~%float32[] micro_doppler_array~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <MicroDoppler>))
   (cl:+ 0
      (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'header))
      2
      2
+     1
      4 (cl:reduce #'cl:+ (cl:slot-value msg 'micro_doppler_array) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4)))
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <MicroDoppler>))
@@ -129,5 +142,6 @@
     (cl:cons ':header (header msg))
     (cl:cons ':time_domain_bins (time_domain_bins msg))
     (cl:cons ':num_chirps (num_chirps msg))
+    (cl:cons ':target_idx (target_idx msg))
     (cl:cons ':micro_doppler_array (micro_doppler_array msg))
 ))
