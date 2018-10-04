@@ -12,9 +12,9 @@ from ti_mmwave_rospkg.msg import RadarScan
 
 class micro_doppler_signature_proc:
     def __init__(self, bag, label):
-        self.bag = rosbag.Bag('/home/fengjin/rosbag/' + bag)
-        self.csv_name_x = '/home/fengjin/database/x_' + bag[:-3] + 'csv'
-        self.csv_name_y = '/home/fengjin/database/y_' + bag[:-3] + 'csv'
+        self.bag = rosbag.Bag('/home/ece561/rosbag/' + bag)
+        self.csv_name_x = '/home/ece561/database/x_' + bag[:-3] + 'csv'
+        self.csv_name_y = '/home/ece561/database/y_' + bag[:-3] + 'csv'
         self.label = label
         
     def read_plot_mds_all(self):
@@ -87,6 +87,6 @@ if __name__ == '__main__':
     bag = vars(args)['bag']
     label = vars(args)['label']
     # micro_doppler_signature_proc(bag, label).read_plot_mds_all()
-    # micro_doppler_signature_proc(bag, label).read_plot_mds_array()
-    micro_doppler_signature_proc(bag, label).save_to_csv()
+    micro_doppler_signature_proc(bag, label).read_plot_mds_array()
+    # micro_doppler_signature_proc(bag, label).save_to_csv()
     # micro_doppler_signature_proc(bag, label).main()

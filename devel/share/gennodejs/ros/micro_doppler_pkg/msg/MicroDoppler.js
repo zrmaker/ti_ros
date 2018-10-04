@@ -22,7 +22,6 @@ class MicroDoppler {
       this.header = null;
       this.time_domain_bins = null;
       this.num_chirps = null;
-      this.target_idx = null;
       this.micro_doppler_array = null;
     }
     else {
@@ -44,12 +43,6 @@ class MicroDoppler {
       else {
         this.num_chirps = 0;
       }
-      if (initObj.hasOwnProperty('target_idx')) {
-        this.target_idx = initObj.target_idx
-      }
-      else {
-        this.target_idx = 0;
-      }
       if (initObj.hasOwnProperty('micro_doppler_array')) {
         this.micro_doppler_array = initObj.micro_doppler_array
       }
@@ -67,8 +60,6 @@ class MicroDoppler {
     bufferOffset = _serializer.uint16(obj.time_domain_bins, buffer, bufferOffset);
     // Serialize message field [num_chirps]
     bufferOffset = _serializer.uint16(obj.num_chirps, buffer, bufferOffset);
-    // Serialize message field [target_idx]
-    bufferOffset = _serializer.uint8(obj.target_idx, buffer, bufferOffset);
     // Serialize message field [micro_doppler_array]
     bufferOffset = _arraySerializer.float32(obj.micro_doppler_array, buffer, bufferOffset, null);
     return bufferOffset;
@@ -84,8 +75,6 @@ class MicroDoppler {
     data.time_domain_bins = _deserializer.uint16(buffer, bufferOffset);
     // Deserialize message field [num_chirps]
     data.num_chirps = _deserializer.uint16(buffer, bufferOffset);
-    // Deserialize message field [target_idx]
-    data.target_idx = _deserializer.uint8(buffer, bufferOffset);
     // Deserialize message field [micro_doppler_array]
     data.micro_doppler_array = _arrayDeserializer.float32(buffer, bufferOffset, null)
     return data;
@@ -95,7 +84,7 @@ class MicroDoppler {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
     length += 4 * object.micro_doppler_array.length;
-    return length + 9;
+    return length + 8;
   }
 
   static datatype() {
@@ -105,7 +94,7 @@ class MicroDoppler {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '9f59589feb32f7e46fa75d33dbd81913';
+    return '960f466c8989e7496b5722e5279986ae';
   }
 
   static messageDefinition() {
@@ -114,7 +103,6 @@ class MicroDoppler {
     Header header
     uint16 time_domain_bins
     uint16 num_chirps
-    uint8 target_idx
     float32[] micro_doppler_array
     ================================================================================
     MSG: std_msgs/Header
@@ -162,13 +150,6 @@ class MicroDoppler {
     }
     else {
       resolved.num_chirps = 0
-    }
-
-    if (msg.target_idx !== undefined) {
-      resolved.target_idx = msg.target_idx;
-    }
-    else {
-      resolved.target_idx = 0
     }
 
     if (msg.micro_doppler_array !== undefined) {

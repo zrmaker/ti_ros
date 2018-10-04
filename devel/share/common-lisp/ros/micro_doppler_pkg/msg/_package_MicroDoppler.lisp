@@ -5,8 +5,6 @@
           TIME_DOMAIN_BINS
           NUM_CHIRPS-VAL
           NUM_CHIRPS
-          TARGET_IDX-VAL
-          TARGET_IDX
           MICRO_DOPPLER_ARRAY-VAL
           MICRO_DOPPLER_ARRAY
 ))

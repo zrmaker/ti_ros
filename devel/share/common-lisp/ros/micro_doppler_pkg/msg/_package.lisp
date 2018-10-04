@@ -3,5 +3,9 @@
   (:export
    "<MICRODOPPLER>"
    "MICRODOPPLER"
+   "<MICRODOPPLER_M>"
+   "MICRODOPPLER_M"
+   "<MICRODOPPLER_S>"
+   "MICRODOPPLER_S"
   ))
 

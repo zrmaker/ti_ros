@@ -16,7 +16,7 @@
 
 (defclass micro_doppler_pkg::MicroDoppler
   :super ros::object
-  :slots (_header _time_domain_bins _num_chirps _target_idx _micro_doppler_array ))
+  :slots (_header _time_domain_bins _num_chirps _micro_doppler_array ))
 
 (defmethod micro_doppler_pkg::MicroDoppler
   (:init
@@ -24,14 +24,12 @@
     ((:header __header) (instance std_msgs::Header :init))
     ((:time_domain_bins __time_domain_bins) 0)
     ((:num_chirps __num_chirps) 0)
-    ((:target_idx __target_idx) 0)
     ((:micro_doppler_array __micro_doppler_array) (make-array 0 :initial-element 0.0 :element-type :float))
     )
    (send-super :init)
    (setq _header __header)
    (setq _time_domain_bins (round __time_domain_bins))
    (setq _num_chirps (round __num_chirps))
-   (setq _target_idx (round __target_idx))
    (setq _micro_doppler_array __micro_doppler_array)
    self)
   (:header
@@ -47,9 +45,6 @@
   (:num_chirps
    (&optional __num_chirps)
    (if __num_chirps (setq _num_chirps __num_chirps)) _num_chirps)
-  (:target_idx
-   (&optional __target_idx)
-   (if __target_idx (setq _target_idx __target_idx)) _target_idx)
   (:micro_doppler_array
    (&optional __micro_doppler_array)
    (if __micro_doppler_array (setq _micro_doppler_array __micro_doppler_array)) _micro_doppler_array)
@@ -62,8 +57,6 @@
     2
     ;; uint16 _num_chirps
     2
-    ;; uint8 _target_idx
-    1
     ;; float32[] _micro_doppler_array
     (* 4    (length _micro_doppler_array)) 4
     ))
@@ -77,8 +70,6 @@
        (write-word _time_domain_bins s)
      ;; uint16 _num_chirps
        (write-word _num_chirps s)
-     ;; uint8 _target_idx
-       (write-byte _target_idx s)
      ;; float32[] _micro_doppler_array
      (write-long (length _micro_doppler_array) s)
      (dotimes (i (length _micro_doppler_array))
@@ -94,8 +85,6 @@
      (setq _time_domain_bins (sys::peek buf ptr- :short)) (incf ptr- 2)
    ;; uint16 _num_chirps
      (setq _num_chirps (sys::peek buf ptr- :short)) (incf ptr- 2)
-   ;; uint8 _target_idx
-     (setq _target_idx (sys::peek buf ptr- :char)) (incf ptr- 1)
    ;; float32[] _micro_doppler_array
    (let (n)
      (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4)
@@ -107,13 +96,12 @@
    self)
   )
 
-(setf (get micro_doppler_pkg::MicroDoppler :md5sum-) "9f59589feb32f7e46fa75d33dbd81913")
+(setf (get micro_doppler_pkg::MicroDoppler :md5sum-) "960f466c8989e7496b5722e5279986ae")
 (setf (get micro_doppler_pkg::MicroDoppler :datatype-) "micro_doppler_pkg/MicroDoppler")
 (setf (get micro_doppler_pkg::MicroDoppler :definition-)
       "Header header
 uint16 time_domain_bins
 uint16 num_chirps
-uint8 target_idx
 float32[] micro_doppler_array
 ================================================================================
 MSG: std_msgs/Header
@@ -137,6 +125,6 @@ string frame_id
 
 
 
-(provide :micro_doppler_pkg/MicroDoppler "9f59589feb32f7e46fa75d33dbd81913")
+(provide :micro_doppler_pkg/MicroDoppler "960f466c8989e7496b5722e5279986ae")
 
 

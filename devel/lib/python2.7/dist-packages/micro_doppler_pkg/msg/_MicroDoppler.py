@@ -8,13 +8,12 @@ import struct
 import std_msgs.msg
 
 class MicroDoppler(genpy.Message):
-  _md5sum = "9f59589feb32f7e46fa75d33dbd81913"
+  _md5sum = "960f466c8989e7496b5722e5279986ae"
   _type = "micro_doppler_pkg/MicroDoppler"
   _has_header = True #flag to mark the presence of a Header object
   _full_text = """Header header
 uint16 time_domain_bins
 uint16 num_chirps
-uint8 target_idx
 float32[] micro_doppler_array
 ================================================================================
 MSG: std_msgs/Header
@@ -34,8 +33,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['header','time_domain_bins','num_chirps','target_idx','micro_doppler_array']
-  _slot_types = ['std_msgs/Header','uint16','uint16','uint8','float32[]']
+  __slots__ = ['header','time_domain_bins','num_chirps','micro_doppler_array']
+  _slot_types = ['std_msgs/Header','uint16','uint16','float32[]']
 
   def __init__(self, *args, **kwds):
     """
@@ -45,7 +44,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,time_domain_bins,num_chirps,target_idx,micro_doppler_array
+       header,time_domain_bins,num_chirps,micro_doppler_array
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -60,15 +59,12 @@ string frame_id
         self.time_domain_bins = 0
       if self.num_chirps is None:
         self.num_chirps = 0
-      if self.target_idx is None:
-        self.target_idx = 0
       if self.micro_doppler_array is None:
         self.micro_doppler_array = []
     else:
       self.header = std_msgs.msg.Header()
       self.time_domain_bins = 0
       self.num_chirps = 0
-      self.target_idx = 0
       self.micro_doppler_array = []
 
   def _get_types(self):
@@ -92,7 +88,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_2HB().pack(_x.time_domain_bins, _x.num_chirps, _x.target_idx))
+      buff.write(_get_struct_2H().pack(_x.time_domain_bins, _x.num_chirps))
       length = len(self.micro_doppler_array)
       buff.write(_struct_I.pack(length))
       pattern = '<%sf'%length
@@ -124,8 +120,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 5
-      (_x.time_domain_bins, _x.num_chirps, _x.target_idx,) = _get_struct_2HB().unpack(str[start:end])
+      end += 4
+      (_x.time_domain_bins, _x.num_chirps,) = _get_struct_2H().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -154,7 +150,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_2HB().pack(_x.time_domain_bins, _x.num_chirps, _x.target_idx))
+      buff.write(_get_struct_2H().pack(_x.time_domain_bins, _x.num_chirps))
       length = len(self.micro_doppler_array)
       buff.write(_struct_I.pack(length))
       pattern = '<%sf'%length
@@ -187,8 +183,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 5
-      (_x.time_domain_bins, _x.num_chirps, _x.target_idx,) = _get_struct_2HB().unpack(str[start:end])
+      end += 4
+      (_x.time_domain_bins, _x.num_chirps,) = _get_struct_2H().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -210,9 +206,9 @@ def _get_struct_3I():
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_2HB = None
-def _get_struct_2HB():
-    global _struct_2HB
-    if _struct_2HB is None:
-        _struct_2HB = struct.Struct("<2HB")
-    return _struct_2HB
+_struct_2H = None
+def _get_struct_2H():
+    global _struct_2H
+    if _struct_2H is None:
+        _struct_2H = struct.Struct("<2H")
+    return _struct_2H

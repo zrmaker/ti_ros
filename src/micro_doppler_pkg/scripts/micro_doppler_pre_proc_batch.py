@@ -13,8 +13,8 @@ import os
 
 class micro_doppler_signature_proc:
     def __init__(self):
-        self.bagsrcdir  = '/home/fengjin/rosbag/' 
-        self.csvdir     = '/home/fengjin/database/'     
+        self.bagsrcdir  = '/home/ece561/rosbag/' 
+        self.csvdir     = '/home/ece561/database/'     
 
     def save_to_csv(self):
         filecnt = 0
