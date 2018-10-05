@@ -21,4 +21,12 @@
           BEARING
           INTENSITY-VAL
           INTENSITY
+          POSX-VAL
+          POSX
+          POSY-VAL
+          POSY
+          VELX-VAL
+          VELX
+          VELY-VAL
+          VELY
 ))

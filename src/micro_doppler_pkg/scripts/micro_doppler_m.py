@@ -66,6 +66,7 @@ class micro_doppler_signature:
                 mds_msg.num_chirps = self.nd
                 mds_msg.target_idx = targets[i]
                 mds_msg.micro_doppler_array = mds_list
+                
                 self.pub_.publish(mds_msg)
         elif targets.size == 1:
             tmp = mds_cur[0,:].flatten()

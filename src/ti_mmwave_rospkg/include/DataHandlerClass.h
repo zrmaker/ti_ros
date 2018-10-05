@@ -57,6 +57,7 @@ public:
     
     /*Sorted mmwDemo Data structure*/
     mmwDataPacket mmwData;
+    MmwDemo_output_message_TargetList_t * TargetListDataSet = NULL;
 
 private:
 

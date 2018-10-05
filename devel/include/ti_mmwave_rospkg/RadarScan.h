@@ -35,7 +35,11 @@ struct RadarScan_
     , velocity(0.0)
     , doppler_bin(0)
     , bearing(0.0)
-    , intensity(0.0)  {
+    , intensity(0.0)
+    , posX(0.0)
+    , posY(0.0)
+    , velX(0.0)
+    , vely(0.0)  {
     }
   RadarScan_(const ContainerAllocator& _alloc)
     : header(_alloc)
@@ -48,7 +52,11 @@ struct RadarScan_
     , velocity(0.0)
     , doppler_bin(0)
     , bearing(0.0)
-    , intensity(0.0)  {
+    , intensity(0.0)
+    , posX(0.0)
+    , posY(0.0)
+    , velX(0.0)
+    , vely(0.0)  {
   (void)_alloc;
     }
 
@@ -86,6 +94,18 @@ struct RadarScan_
 
    typedef float _intensity_type;
   _intensity_type intensity;
+
+   typedef float _posX_type;
+  _posX_type posX;
+
+   typedef float _posY_type;
+  _posY_type posY;
+
+   typedef float _velX_type;
+  _velX_type velX;
+
+   typedef float _vely_type;
+  _vely_type vely;
 
 
 
@@ -165,12 +185,12 @@ struct MD5Sum< ::ti_mmwave_rospkg::RadarScan_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "a9e17cfd9878f238a2924fdff3088086";
+    return "df3a7f420e430dcff20c0a9e2b1968fe";
   }
 
   static const char* value(const ::ti_mmwave_rospkg::RadarScan_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xa9e17cfd9878f238ULL;
-  static const uint64_t static_value2 = 0xa2924fdff3088086ULL;
+  static const uint64_t static_value1 = 0xdf3a7f420e430dcfULL;
+  static const uint64_t static_value2 = 0xf20c0a9e2b1968feULL;
 };
 
 template<class ContainerAllocator>
@@ -200,6 +220,10 @@ float32 velocity\n\
 uint16 doppler_bin\n\
 float32 bearing\n\
 float32 intensity\n\
+float32 posX\n\
+float32 posY\n\
+float32 velX\n\
+float32 vely\n\
 ================================================================================\n\
 MSG: std_msgs/Header\n\
 # Standard metadata for higher-level stamped data types.\n\
@@ -246,6 +270,10 @@ namespace serialization
       stream.next(m.doppler_bin);
       stream.next(m.bearing);
       stream.next(m.intensity);
+      stream.next(m.posX);
+      stream.next(m.posY);
+      stream.next(m.velX);
+      stream.next(m.vely);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -287,6 +315,14 @@ struct Printer< ::ti_mmwave_rospkg::RadarScan_<ContainerAllocator> >
     Printer<float>::stream(s, indent + "  ", v.bearing);
     s << indent << "intensity: ";
     Printer<float>::stream(s, indent + "  ", v.intensity);
+    s << indent << "posX: ";
+    Printer<float>::stream(s, indent + "  ", v.posX);
+    s << indent << "posY: ";
+    Printer<float>::stream(s, indent + "  ", v.posY);
+    s << indent << "velX: ";
+    Printer<float>::stream(s, indent + "  ", v.velX);
+    s << indent << "vely: ";
+    Printer<float>::stream(s, indent + "  ", v.vely);
   }
 };
 

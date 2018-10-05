@@ -3,3 +3,7 @@ uint16 time_domain_bins
 uint16 num_chirps
 uint8 target_idx
 float32[] micro_doppler_array
+float32 posX
+float32 posY
+float32 velX
+float32 velY

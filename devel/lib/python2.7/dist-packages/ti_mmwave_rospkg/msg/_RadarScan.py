@@ -8,7 +8,7 @@ import struct
 import std_msgs.msg
 
 class RadarScan(genpy.Message):
-  _md5sum = "a9e17cfd9878f238a2924fdff3088086"
+  _md5sum = "df3a7f420e430dcff20c0a9e2b1968fe"
   _type = "ti_mmwave_rospkg/RadarScan"
   _has_header = True #flag to mark the presence of a Header object
   _full_text = """Header header
@@ -22,6 +22,10 @@ float32 velocity
 uint16 doppler_bin
 float32 bearing
 float32 intensity
+float32 posX
+float32 posY
+float32 velX
+float32 vely
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -40,8 +44,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['header','point_id','target_idx','x','y','z','range','velocity','doppler_bin','bearing','intensity']
-  _slot_types = ['std_msgs/Header','uint16','uint8','float32','float32','float32','float32','float32','uint16','float32','float32']
+  __slots__ = ['header','point_id','target_idx','x','y','z','range','velocity','doppler_bin','bearing','intensity','posX','posY','velX','vely']
+  _slot_types = ['std_msgs/Header','uint16','uint8','float32','float32','float32','float32','float32','uint16','float32','float32','float32','float32','float32','float32']
 
   def __init__(self, *args, **kwds):
     """
@@ -51,7 +55,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,point_id,target_idx,x,y,z,range,velocity,doppler_bin,bearing,intensity
+       header,point_id,target_idx,x,y,z,range,velocity,doppler_bin,bearing,intensity,posX,posY,velX,vely
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -82,6 +86,14 @@ string frame_id
         self.bearing = 0.
       if self.intensity is None:
         self.intensity = 0.
+      if self.posX is None:
+        self.posX = 0.
+      if self.posY is None:
+        self.posY = 0.
+      if self.velX is None:
+        self.velX = 0.
+      if self.vely is None:
+        self.vely = 0.
     else:
       self.header = std_msgs.msg.Header()
       self.point_id = 0
@@ -94,6 +106,10 @@ string frame_id
       self.doppler_bin = 0
       self.bearing = 0.
       self.intensity = 0.
+      self.posX = 0.
+      self.posY = 0.
+      self.velX = 0.
+      self.vely = 0.
 
   def _get_types(self):
     """
@@ -116,7 +132,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_HB5fH2f().pack(_x.point_id, _x.target_idx, _x.x, _x.y, _x.z, _x.range, _x.velocity, _x.doppler_bin, _x.bearing, _x.intensity))
+      buff.write(_get_struct_HB5fH6f().pack(_x.point_id, _x.target_idx, _x.x, _x.y, _x.z, _x.range, _x.velocity, _x.doppler_bin, _x.bearing, _x.intensity, _x.posX, _x.posY, _x.velX, _x.vely))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -144,8 +160,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 33
-      (_x.point_id, _x.target_idx, _x.x, _x.y, _x.z, _x.range, _x.velocity, _x.doppler_bin, _x.bearing, _x.intensity,) = _get_struct_HB5fH2f().unpack(str[start:end])
+      end += 49
+      (_x.point_id, _x.target_idx, _x.x, _x.y, _x.z, _x.range, _x.velocity, _x.doppler_bin, _x.bearing, _x.intensity, _x.posX, _x.posY, _x.velX, _x.vely,) = _get_struct_HB5fH6f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -167,7 +183,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_HB5fH2f().pack(_x.point_id, _x.target_idx, _x.x, _x.y, _x.z, _x.range, _x.velocity, _x.doppler_bin, _x.bearing, _x.intensity))
+      buff.write(_get_struct_HB5fH6f().pack(_x.point_id, _x.target_idx, _x.x, _x.y, _x.z, _x.range, _x.velocity, _x.doppler_bin, _x.bearing, _x.intensity, _x.posX, _x.posY, _x.velX, _x.vely))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -196,8 +212,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 33
-      (_x.point_id, _x.target_idx, _x.x, _x.y, _x.z, _x.range, _x.velocity, _x.doppler_bin, _x.bearing, _x.intensity,) = _get_struct_HB5fH2f().unpack(str[start:end])
+      end += 49
+      (_x.point_id, _x.target_idx, _x.x, _x.y, _x.z, _x.range, _x.velocity, _x.doppler_bin, _x.bearing, _x.intensity, _x.posX, _x.posY, _x.velX, _x.vely,) = _get_struct_HB5fH6f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -212,9 +228,9 @@ def _get_struct_3I():
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_HB5fH2f = None
-def _get_struct_HB5fH2f():
-    global _struct_HB5fH2f
-    if _struct_HB5fH2f is None:
-        _struct_HB5fH2f = struct.Struct("<HB5fH2f")
-    return _struct_HB5fH2f
+_struct_HB5fH6f = None
+def _get_struct_HB5fH6f():
+    global _struct_HB5fH6f
+    if _struct_HB5fH6f is None:
+        _struct_HB5fH6f = struct.Struct("<HB5fH6f")
+    return _struct_HB5fH6f

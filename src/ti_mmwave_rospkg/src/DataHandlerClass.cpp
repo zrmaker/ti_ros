@@ -231,7 +231,7 @@ void *DataUARTHandler::sortIncomingData( void )
     uint32_t headerSize;
     unsigned int currentDatap = 0;
     SorterState sorterState = READ_HEADER;
-    uint16_t i = 0, tlvCount = 0, offset = 0;
+    uint16_t i = 0, j = 0, tlvCount = 0, offset = 0;
     float maxElevationAngleRatioSquared;
     float maxAzimuthAngleRatio;
     uint8_t rxHeader[52] = {'0'};
@@ -419,10 +419,15 @@ void *DataUARTHandler::sortIncomingData( void )
         case READ_TARGET_LIST_2D: 
             Point_List_Idx ++;
             num_Targets = (tlvLen-sizeof(mmwData.tlvHeader))/sizeof(mmwData.TargetListData);
+            if ( TargetListDataSet != NULL ){
+                free(TargetListDataSet);
+                TargetListDataSet = NULL;
+            }            
+            TargetListDataSet = (MmwDemo_output_message_TargetList_t *)malloc(num_Targets * sizeof(mmwData.TargetListData));
             for(i=0; i<num_Targets; i++)
             {
                 //get target list
-                memcpy( tempData, &currentBufp->at(currentDatap), sizeof(mmwData.TargetListData));
+                memcpy( &(TargetListDataSet[i]), &currentBufp->at(currentDatap), sizeof(mmwData.TargetListData));
                 currentDatap += ( sizeof(mmwData.TargetListData) );
             }
 
@@ -453,6 +458,17 @@ void *DataUARTHandler::sortIncomingData( void )
                     radarscan_pub.doppler_bin           = radarscan_lf[i].doppler_bin;
                     radarscan_pub.bearing               = radarscan_lf[i].bearing;
                     radarscan_pub.intensity             = radarscan_lf[i].intensity;
+
+                    for(j=0; j<num_Targets; j++)
+                    {
+                        if( radarscan_lf[i].target_idx == TargetListDataSet[j].tid )
+                        {
+                            radarscan_pub.posX          = TargetListDataSet[j].posX;
+                            radarscan_pub.posY          = TargetListDataSet[j].posY;
+                            radarscan_pub.velX          = TargetListDataSet[j].posX;
+                            radarscan_pub.posX          = TargetListDataSet[j].posX;
+                        }
+                    } 
                     
                     radar_scan_pub.publish(radarscan_pub);                   
                     visualize(radarscan_pub);

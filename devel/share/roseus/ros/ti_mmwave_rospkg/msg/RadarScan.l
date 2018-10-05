@@ -16,7 +16,7 @@
 
 (defclass ti_mmwave_rospkg::RadarScan
   :super ros::object
-  :slots (_header _point_id _target_idx _x _y _z _range _velocity _doppler_bin _bearing _intensity ))
+  :slots (_header _point_id _target_idx _x _y _z _range _velocity _doppler_bin _bearing _intensity _posX _posY _velX _vely ))
 
 (defmethod ti_mmwave_rospkg::RadarScan
   (:init
@@ -32,6 +32,10 @@
     ((:doppler_bin __doppler_bin) 0)
     ((:bearing __bearing) 0.0)
     ((:intensity __intensity) 0.0)
+    ((:posX __posX) 0.0)
+    ((:posY __posY) 0.0)
+    ((:velX __velX) 0.0)
+    ((:vely __vely) 0.0)
     )
    (send-super :init)
    (setq _header __header)
@@ -45,6 +49,10 @@
    (setq _doppler_bin (round __doppler_bin))
    (setq _bearing (float __bearing))
    (setq _intensity (float __intensity))
+   (setq _posX (float __posX))
+   (setq _posY (float __posY))
+   (setq _velX (float __velX))
+   (setq _vely (float __vely))
    self)
   (:header
    (&rest __header)
@@ -83,6 +91,18 @@
   (:intensity
    (&optional __intensity)
    (if __intensity (setq _intensity __intensity)) _intensity)
+  (:posX
+   (&optional __posX)
+   (if __posX (setq _posX __posX)) _posX)
+  (:posY
+   (&optional __posY)
+   (if __posY (setq _posY __posY)) _posY)
+  (:velX
+   (&optional __velX)
+   (if __velX (setq _velX __velX)) _velX)
+  (:vely
+   (&optional __vely)
+   (if __vely (setq _vely __vely)) _vely)
   (:serialization-length
    ()
    (+
@@ -107,6 +127,14 @@
     ;; float32 _bearing
     4
     ;; float32 _intensity
+    4
+    ;; float32 _posX
+    4
+    ;; float32 _posY
+    4
+    ;; float32 _velX
+    4
+    ;; float32 _vely
     4
     ))
   (:serialize
@@ -135,6 +163,14 @@
        (sys::poke _bearing (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;; float32 _intensity
        (sys::poke _intensity (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _posX
+       (sys::poke _posX (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _posY
+       (sys::poke _posY (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _velX
+       (sys::poke _velX (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _vely
+       (sys::poke _vely (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -161,11 +197,19 @@
      (setq _bearing (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;; float32 _intensity
      (setq _intensity (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _posX
+     (setq _posX (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _posY
+     (setq _posY (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _velX
+     (setq _velX (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _vely
+     (setq _vely (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;;
    self)
   )
 
-(setf (get ti_mmwave_rospkg::RadarScan :md5sum-) "a9e17cfd9878f238a2924fdff3088086")
+(setf (get ti_mmwave_rospkg::RadarScan :md5sum-) "df3a7f420e430dcff20c0a9e2b1968fe")
 (setf (get ti_mmwave_rospkg::RadarScan :datatype-) "ti_mmwave_rospkg/RadarScan")
 (setf (get ti_mmwave_rospkg::RadarScan :definition-)
       "Header header
@@ -179,6 +223,10 @@ float32 velocity
 uint16 doppler_bin
 float32 bearing
 float32 intensity
+float32 posX
+float32 posY
+float32 velX
+float32 vely
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -201,6 +249,6 @@ string frame_id
 
 
 
-(provide :ti_mmwave_rospkg/RadarScan "a9e17cfd9878f238a2924fdff3088086")
+(provide :ti_mmwave_rospkg/RadarScan "df3a7f420e430dcff20c0a9e2b1968fe")
 
 

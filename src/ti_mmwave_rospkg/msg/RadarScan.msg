@@ -9,3 +9,7 @@ float32 velocity
 uint16 doppler_bin
 float32 bearing
 float32 intensity
+float32 posX
+float32 posY
+float32 velX
+float32 vely

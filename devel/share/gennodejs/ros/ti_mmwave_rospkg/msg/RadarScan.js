@@ -30,6 +30,10 @@ class RadarScan {
       this.doppler_bin = null;
       this.bearing = null;
       this.intensity = null;
+      this.posX = null;
+      this.posY = null;
+      this.velX = null;
+      this.vely = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -98,6 +102,30 @@ class RadarScan {
       else {
         this.intensity = 0.0;
       }
+      if (initObj.hasOwnProperty('posX')) {
+        this.posX = initObj.posX
+      }
+      else {
+        this.posX = 0.0;
+      }
+      if (initObj.hasOwnProperty('posY')) {
+        this.posY = initObj.posY
+      }
+      else {
+        this.posY = 0.0;
+      }
+      if (initObj.hasOwnProperty('velX')) {
+        this.velX = initObj.velX
+      }
+      else {
+        this.velX = 0.0;
+      }
+      if (initObj.hasOwnProperty('vely')) {
+        this.vely = initObj.vely
+      }
+      else {
+        this.vely = 0.0;
+      }
     }
   }
 
@@ -125,6 +153,14 @@ class RadarScan {
     bufferOffset = _serializer.float32(obj.bearing, buffer, bufferOffset);
     // Serialize message field [intensity]
     bufferOffset = _serializer.float32(obj.intensity, buffer, bufferOffset);
+    // Serialize message field [posX]
+    bufferOffset = _serializer.float32(obj.posX, buffer, bufferOffset);
+    // Serialize message field [posY]
+    bufferOffset = _serializer.float32(obj.posY, buffer, bufferOffset);
+    // Serialize message field [velX]
+    bufferOffset = _serializer.float32(obj.velX, buffer, bufferOffset);
+    // Serialize message field [vely]
+    bufferOffset = _serializer.float32(obj.vely, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -154,13 +190,21 @@ class RadarScan {
     data.bearing = _deserializer.float32(buffer, bufferOffset);
     // Deserialize message field [intensity]
     data.intensity = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [posX]
+    data.posX = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [posY]
+    data.posY = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [velX]
+    data.velX = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [vely]
+    data.vely = _deserializer.float32(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 33;
+    return length + 49;
   }
 
   static datatype() {
@@ -170,7 +214,7 @@ class RadarScan {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'a9e17cfd9878f238a2924fdff3088086';
+    return 'df3a7f420e430dcff20c0a9e2b1968fe';
   }
 
   static messageDefinition() {
@@ -187,6 +231,10 @@ class RadarScan {
     uint16 doppler_bin
     float32 bearing
     float32 intensity
+    float32 posX
+    float32 posY
+    float32 velX
+    float32 vely
     ================================================================================
     MSG: std_msgs/Header
     # Standard metadata for higher-level stamped data types.
@@ -289,6 +337,34 @@ class RadarScan {
     }
     else {
       resolved.intensity = 0.0
+    }
+
+    if (msg.posX !== undefined) {
+      resolved.posX = msg.posX;
+    }
+    else {
+      resolved.posX = 0.0
+    }
+
+    if (msg.posY !== undefined) {
+      resolved.posY = msg.posY;
+    }
+    else {
+      resolved.posY = 0.0
+    }
+
+    if (msg.velX !== undefined) {
+      resolved.velX = msg.velX;
+    }
+    else {
+      resolved.velX = 0.0
+    }
+
+    if (msg.vely !== undefined) {
+      resolved.vely = msg.vely;
+    }
+    else {
+      resolved.vely = 0.0
     }
 
     return resolved;

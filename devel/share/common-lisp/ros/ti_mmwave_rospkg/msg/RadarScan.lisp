@@ -61,6 +61,26 @@
     :reader intensity
     :initarg :intensity
     :type cl:float
+    :initform 0.0)
+   (posX
+    :reader posX
+    :initarg :posX
+    :type cl:float
+    :initform 0.0)
+   (posY
+    :reader posY
+    :initarg :posY
+    :type cl:float
+    :initform 0.0)
+   (velX
+    :reader velX
+    :initarg :velX
+    :type cl:float
+    :initform 0.0)
+   (vely
+    :reader vely
+    :initarg :vely
+    :type cl:float
     :initform 0.0))
 )
 
@@ -126,6 +146,26 @@
 (cl:defmethod intensity-val ((m <RadarScan>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ti_mmwave_rospkg-msg:intensity-val is deprecated.  Use ti_mmwave_rospkg-msg:intensity instead.")
   (intensity m))
+
+(cl:ensure-generic-function 'posX-val :lambda-list '(m))
+(cl:defmethod posX-val ((m <RadarScan>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ti_mmwave_rospkg-msg:posX-val is deprecated.  Use ti_mmwave_rospkg-msg:posX instead.")
+  (posX m))
+
+(cl:ensure-generic-function 'posY-val :lambda-list '(m))
+(cl:defmethod posY-val ((m <RadarScan>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ti_mmwave_rospkg-msg:posY-val is deprecated.  Use ti_mmwave_rospkg-msg:posY instead.")
+  (posY m))
+
+(cl:ensure-generic-function 'velX-val :lambda-list '(m))
+(cl:defmethod velX-val ((m <RadarScan>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ti_mmwave_rospkg-msg:velX-val is deprecated.  Use ti_mmwave_rospkg-msg:velX instead.")
+  (velX m))
+
+(cl:ensure-generic-function 'vely-val :lambda-list '(m))
+(cl:defmethod vely-val ((m <RadarScan>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ti_mmwave_rospkg-msg:vely-val is deprecated.  Use ti_mmwave_rospkg-msg:vely instead.")
+  (vely m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <RadarScan>) ostream)
   "Serializes a message object of type '<RadarScan>"
   (roslisp-msg-protocol:serialize (cl:slot-value msg 'header) ostream)
@@ -165,6 +205,26 @@
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
   (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'intensity))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'posX))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'posY))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'velX))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'vely))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -220,6 +280,30 @@
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
     (cl:setf (cl:slot-value msg 'intensity) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'posX) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'posY) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'velX) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'vely) (roslisp-utils:decode-single-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<RadarScan>)))
@@ -230,16 +314,16 @@
   "ti_mmwave_rospkg/RadarScan")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<RadarScan>)))
   "Returns md5sum for a message object of type '<RadarScan>"
-  "a9e17cfd9878f238a2924fdff3088086")
+  "df3a7f420e430dcff20c0a9e2b1968fe")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'RadarScan)))
   "Returns md5sum for a message object of type 'RadarScan"
-  "a9e17cfd9878f238a2924fdff3088086")
+  "df3a7f420e430dcff20c0a9e2b1968fe")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<RadarScan>)))
   "Returns full string definition for message of type '<RadarScan>"
-  (cl:format cl:nil "Header header~%uint16 point_id~%uint8 target_idx~%float32 x~%float32 y~%float32 z~%float32 range~%float32 velocity~%uint16 doppler_bin~%float32 bearing~%float32 intensity~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%uint16 point_id~%uint8 target_idx~%float32 x~%float32 y~%float32 z~%float32 range~%float32 velocity~%uint16 doppler_bin~%float32 bearing~%float32 intensity~%float32 posX~%float32 posY~%float32 velX~%float32 vely~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'RadarScan)))
   "Returns full string definition for message of type 'RadarScan"
-  (cl:format cl:nil "Header header~%uint16 point_id~%uint8 target_idx~%float32 x~%float32 y~%float32 z~%float32 range~%float32 velocity~%uint16 doppler_bin~%float32 bearing~%float32 intensity~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%uint16 point_id~%uint8 target_idx~%float32 x~%float32 y~%float32 z~%float32 range~%float32 velocity~%uint16 doppler_bin~%float32 bearing~%float32 intensity~%float32 posX~%float32 posY~%float32 velX~%float32 vely~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <RadarScan>))
   (cl:+ 0
      (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'header))
@@ -251,6 +335,10 @@
      4
      4
      2
+     4
+     4
+     4
+     4
      4
      4
 ))
@@ -268,4 +356,8 @@
     (cl:cons ':doppler_bin (doppler_bin msg))
     (cl:cons ':bearing (bearing msg))
     (cl:cons ':intensity (intensity msg))
+    (cl:cons ':posX (posX msg))
+    (cl:cons ':posY (posY msg))
+    (cl:cons ':velX (velX msg))
+    (cl:cons ':vely (vely msg))
 ))
