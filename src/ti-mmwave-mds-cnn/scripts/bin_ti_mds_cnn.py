@@ -111,7 +111,7 @@ class mds_dl:
 		loaded_model = load_model('./output/mds_cnn_model.h5')
 		print('Loaded model from disk.')
 
-		test_data = np.genfromtxt(self.test_file, delimiter=',')
+		test_data = np.load(self.test_file)
 		test_data = test_data.reshape(-1, self.nd, self.time_domain_bins, 1)
 		print('Test data shape:',test_data.shape)
 
