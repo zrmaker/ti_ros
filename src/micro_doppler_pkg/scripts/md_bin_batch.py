@@ -13,7 +13,7 @@ import os
 
 class micro_doppler_signature_proc:
     def __init__(self):
-        self.bagsrcdir  = '/home/ece561/rosbag/' 
+        self.bagsrcdir  = '/home/ece561/rosbag/processed/' 
         self.csvdir     = '/home/ece561/database/'     
 
     def save_to_csv(self):
@@ -24,8 +24,8 @@ class micro_doppler_signature_proc:
                 print('Loading ' + file + '...')
                 label = int(file[-5])
                 bag = rosbag.Bag(self.bagsrcdir + file)
-                csv_name_x = self.csvdir + 'x_' + file[:-3] + 'csv'
-                csv_name_y = self.csvdir + 'y_' + file[:-3] + 'csv'
+                csv_name_x = self.csvdir + 'x_' + file[:-4]
+                csv_name_y = self.csvdir + 'y_' + file[:-4]
                 # print(bag)
                 # print(file)
                 # print(label)
@@ -46,8 +46,10 @@ class micro_doppler_signature_proc:
                     xdata = np.append(xdata, mds_array.reshape((1,-1)), axis = 0)
                     ydata = np.append(ydata, label)
                 # print(xdata.shape,'\n',ydata)
-                np.savetxt(csv_name_x, xdata, delimiter=",")
-                np.savetxt(csv_name_y, ydata, delimiter=",")
+                # np.savetxt(csv_name_x, xdata, delimiter=",")
+                # np.savetxt(csv_name_y, ydata, delimiter=",")
+                np.save(csv_name_x, xdata)
+                np.save(csv_name_y, ydata)
         print('*************************************************')
         print('Done. Total files : \n' + str(filecnt))
     def main(self):
