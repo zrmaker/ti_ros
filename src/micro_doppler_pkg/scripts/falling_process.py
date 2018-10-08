@@ -15,7 +15,8 @@ import os
 class falling_proc:
     def __init__(self):
         self.bagsrcdir  = '/home/ece561/rosbag/' 
-        self.csvdir     = '/home/ece561/rosbag/'     
+        self.csvdir     = '/home/ece561/rosbag/'
+        self.shiftnum   = 5     
 
     def filter(self):
         for file in os.listdir(self.bagsrcdir):
@@ -29,17 +30,36 @@ class falling_proc:
                 timefile = file[:-4] + '_time.csv'
                 falling_time = np.genfromtxt(self.csvdir + timefile,delimiter=',')
                 num_falling = np.size(falling_time, 0)
-                filter_arg = '\"('
+                falling_filter_arg = '\"('
                 for i in range(num_falling):
-                    filter_arg = filter_arg + '((t.secs>=' + stamp[int(falling_time[i,0])-5] + ')&(' + 't.secs<=' + stamp[int(falling_time[i,1])+5] +'))or'
-                filter_arg = filter_arg[:-2] + ')\"'
+                    falling_filter_arg = falling_filter_arg + '((t.secs>=' + stamp[int(falling_time[i,0])-self.shiftnum] + ')&(' + 't.secs<=' + stamp[int(falling_time[i,1])+self.shiftnum] +'))or'
+                falling_filter_arg = falling_filter_arg[:-2] + ')\"'
+
+                nothing_filter_arg = '\"('
+                for i in range(num_falling-1):
+                    nothing_filter_arg = nothing_filter_arg + '((t.secs>=' + stamp[int(falling_time[i,1])+self.shiftnum] + ')&(' + 't.secs<=' + stamp[int(falling_time[i+1,0])-self.shiftnum] +'))or'
+                nothing_filter_arg = nothing_filter_arg[:-2] + ')\"'
+
                 print('********************************')
-                print(filter_arg)
+                # print(falling_filter_arg)
                 unfiltered_file = self.bagsrcdir + file
                 filtered_file = self.bagsrcdir + "processed/" + file
-                command = "rosbag filter " + unfiltered_file + ' ' + filtered_file + ' ' + filter_arg
-                print(command)
+                command = "rosbag filter " + unfiltered_file + ' ' + filtered_file + ' ' + falling_filter_arg
+                # print(command)
+                unfiltered_file = self.bagsrcdir + file
+                filtered_file = self.bagsrcdir + "processed/" + 'nth_' + file[:-5] + '0.bag'
                 self.p = subprocess.Popen(command, stdin=subprocess.PIPE, shell=True)
+                command = "rosbag filter " + unfiltered_file + ' ' + filtered_file + ' ' + nothing_filter_arg
+                self.p = subprocess.Popen(command, stdin=subprocess.PIPE, shell=True)
+                # print(command)
+
+                while 1:
+                    poll = self.p.poll()
+                    if(poll!=None):
+                        # kill the child process
+                        killcommand = "kill -9 " + str(self.p.pid)
+                        self.k = subprocess.Popen(killcommand, shell=True)
+                        break
                 # print(timefile)
                 # print("**********************")
     def main(self):
