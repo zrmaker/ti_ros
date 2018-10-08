@@ -1,6 +1,6 @@
 clear all; close all; clc;
 
-bag = rosbag('/home/ece561/rosbag/falling4_3.bag');
+bag = rosbag('/home/ece561/rosbag/falling10_3.bag');
 sel = select(bag,'Topic','/ti_mmwave/micro_doppler');
 micro_doppler = readMessages(sel,'DataFormat','struct');
 % micro_doppler = readMessages(sel);

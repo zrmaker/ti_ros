@@ -8,7 +8,7 @@ from keras.models import model_from_json
 from keras.models import load_model
 import os
 import math
-from micro_doppler_pkg.msg import MicroDoppler
+from micro_doppler_pkg.msg import MicroDoppler_m
 from mds_cnn_node_pkg.msg import MDSPred
 from mds_dict import mds_dict
 
@@ -28,7 +28,7 @@ class mds_cnn_node:
 
     def main(self):
         rospy.init_node('mds_cnn_node')
-        self.sub_ = rospy.Subscriber('/ti_mmwave/micro_doppler', MicroDoppler, self.mds_predictor)
+        self.sub_ = rospy.Subscriber('/ti_mmwave/micro_doppler', MicroDoppler_m, self.mds_predictor)
         self.pub_ = rospy.Publisher('/ti_mmwave/mds_pred', MDSPred, queue_size=100)
         rospy.spin()
 
@@ -55,6 +55,11 @@ class mds_cnn_node:
         mds_pred_msg.header.stamp = rospy.Time.now()
         mds_pred_msg.mds_pred_array = self.pred.flatten().tolist()
         mds_pred_msg.prediction = cur_state
+        mds_pred_msg.target_idx = mds.target_idx
+        mds_pred_msg.posX = mds.posX
+        mds_pred_msg.posY = mds.posY
+        mds_pred_msg.velX = mds.velX
+        mds_pred_msg.velY = mds.velY
         self.pub_.publish(mds_pred_msg)
 
 if __name__ == '__main__':

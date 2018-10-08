@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg"
+messages_str = "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg;/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg"
 services_str = ""
 pkg_name = "micro_doppler_pkg"
 dependencies_str = "std_msgs"

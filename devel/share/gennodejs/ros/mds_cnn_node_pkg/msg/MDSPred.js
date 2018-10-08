@@ -20,6 +20,11 @@ class MDSPred {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.header = null;
+      this.target_idx = null;
+      this.posX = null;
+      this.posY = null;
+      this.velX = null;
+      this.velY = null;
       this.mds_pred_array = null;
       this.prediction = null;
     }
@@ -29,6 +34,36 @@ class MDSPred {
       }
       else {
         this.header = new std_msgs.msg.Header();
+      }
+      if (initObj.hasOwnProperty('target_idx')) {
+        this.target_idx = initObj.target_idx
+      }
+      else {
+        this.target_idx = 0;
+      }
+      if (initObj.hasOwnProperty('posX')) {
+        this.posX = initObj.posX
+      }
+      else {
+        this.posX = 0.0;
+      }
+      if (initObj.hasOwnProperty('posY')) {
+        this.posY = initObj.posY
+      }
+      else {
+        this.posY = 0.0;
+      }
+      if (initObj.hasOwnProperty('velX')) {
+        this.velX = initObj.velX
+      }
+      else {
+        this.velX = 0.0;
+      }
+      if (initObj.hasOwnProperty('velY')) {
+        this.velY = initObj.velY
+      }
+      else {
+        this.velY = 0.0;
       }
       if (initObj.hasOwnProperty('mds_pred_array')) {
         this.mds_pred_array = initObj.mds_pred_array
@@ -49,6 +84,16 @@ class MDSPred {
     // Serializes a message object of type MDSPred
     // Serialize message field [header]
     bufferOffset = std_msgs.msg.Header.serialize(obj.header, buffer, bufferOffset);
+    // Serialize message field [target_idx]
+    bufferOffset = _serializer.uint8(obj.target_idx, buffer, bufferOffset);
+    // Serialize message field [posX]
+    bufferOffset = _serializer.float32(obj.posX, buffer, bufferOffset);
+    // Serialize message field [posY]
+    bufferOffset = _serializer.float32(obj.posY, buffer, bufferOffset);
+    // Serialize message field [velX]
+    bufferOffset = _serializer.float32(obj.velX, buffer, bufferOffset);
+    // Serialize message field [velY]
+    bufferOffset = _serializer.float32(obj.velY, buffer, bufferOffset);
     // Serialize message field [mds_pred_array]
     bufferOffset = _arraySerializer.float32(obj.mds_pred_array, buffer, bufferOffset, null);
     // Serialize message field [prediction]
@@ -62,6 +107,16 @@ class MDSPred {
     let data = new MDSPred(null);
     // Deserialize message field [header]
     data.header = std_msgs.msg.Header.deserialize(buffer, bufferOffset);
+    // Deserialize message field [target_idx]
+    data.target_idx = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [posX]
+    data.posX = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [posY]
+    data.posY = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [velX]
+    data.velX = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [velY]
+    data.velY = _deserializer.float32(buffer, bufferOffset);
     // Deserialize message field [mds_pred_array]
     data.mds_pred_array = _arrayDeserializer.float32(buffer, bufferOffset, null)
     // Deserialize message field [prediction]
@@ -74,7 +129,7 @@ class MDSPred {
     length += std_msgs.msg.Header.getMessageSize(object.header);
     length += 4 * object.mds_pred_array.length;
     length += object.prediction.length;
-    return length + 8;
+    return length + 25;
   }
 
   static datatype() {
@@ -84,13 +139,18 @@ class MDSPred {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '361fca03c0448d6bd3527dc3c4c1a823';
+    return '1f0f31d758f114011921fb9c0d76aee9';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     Header header
+    uint8 target_idx
+    float32 posX
+    float32 posY
+    float32 velX
+    float32 velY
     float32[] mds_pred_array
     string prediction
     ================================================================================
@@ -125,6 +185,41 @@ class MDSPred {
     }
     else {
       resolved.header = new std_msgs.msg.Header()
+    }
+
+    if (msg.target_idx !== undefined) {
+      resolved.target_idx = msg.target_idx;
+    }
+    else {
+      resolved.target_idx = 0
+    }
+
+    if (msg.posX !== undefined) {
+      resolved.posX = msg.posX;
+    }
+    else {
+      resolved.posX = 0.0
+    }
+
+    if (msg.posY !== undefined) {
+      resolved.posY = msg.posY;
+    }
+    else {
+      resolved.posY = 0.0
+    }
+
+    if (msg.velX !== undefined) {
+      resolved.velX = msg.velX;
+    }
+    else {
+      resolved.velX = 0.0
+    }
+
+    if (msg.velY !== undefined) {
+      resolved.velY = msg.velY;
+    }
+    else {
+      resolved.velY = 0.0
     }
 
     if (msg.mds_pred_array !== undefined) {

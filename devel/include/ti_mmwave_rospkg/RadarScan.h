@@ -39,7 +39,7 @@ struct RadarScan_
     , posX(0.0)
     , posY(0.0)
     , velX(0.0)
-    , vely(0.0)  {
+    , velY(0.0)  {
     }
   RadarScan_(const ContainerAllocator& _alloc)
     : header(_alloc)
@@ -56,7 +56,7 @@ struct RadarScan_
     , posX(0.0)
     , posY(0.0)
     , velX(0.0)
-    , vely(0.0)  {
+    , velY(0.0)  {
   (void)_alloc;
     }
 
@@ -104,8 +104,8 @@ struct RadarScan_
    typedef float _velX_type;
   _velX_type velX;
 
-   typedef float _vely_type;
-  _vely_type vely;
+   typedef float _velY_type;
+  _velY_type velY;
 
 
 
@@ -185,12 +185,12 @@ struct MD5Sum< ::ti_mmwave_rospkg::RadarScan_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "df3a7f420e430dcff20c0a9e2b1968fe";
+    return "a4d09446d2fc17ce80358b29d25af8b6";
   }
 
   static const char* value(const ::ti_mmwave_rospkg::RadarScan_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xdf3a7f420e430dcfULL;
-  static const uint64_t static_value2 = 0xf20c0a9e2b1968feULL;
+  static const uint64_t static_value1 = 0xa4d09446d2fc17ceULL;
+  static const uint64_t static_value2 = 0x80358b29d25af8b6ULL;
 };
 
 template<class ContainerAllocator>
@@ -223,7 +223,8 @@ float32 intensity\n\
 float32 posX\n\
 float32 posY\n\
 float32 velX\n\
-float32 vely\n\
+float32 velY\n\
+\n\
 ================================================================================\n\
 MSG: std_msgs/Header\n\
 # Standard metadata for higher-level stamped data types.\n\
@@ -273,7 +274,7 @@ namespace serialization
       stream.next(m.posX);
       stream.next(m.posY);
       stream.next(m.velX);
-      stream.next(m.vely);
+      stream.next(m.velY);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -321,8 +322,8 @@ struct Printer< ::ti_mmwave_rospkg::RadarScan_<ContainerAllocator> >
     Printer<float>::stream(s, indent + "  ", v.posY);
     s << indent << "velX: ";
     Printer<float>::stream(s, indent + "  ", v.velX);
-    s << indent << "vely: ";
-    Printer<float>::stream(s, indent + "  ", v.vely);
+    s << indent << "velY: ";
+    Printer<float>::stream(s, indent + "  ", v.velY);
   }
 };
 

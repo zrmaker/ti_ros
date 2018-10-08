@@ -26,11 +26,21 @@ struct MDSPred_
 
   MDSPred_()
     : header()
+    , target_idx(0)
+    , posX(0.0)
+    , posY(0.0)
+    , velX(0.0)
+    , velY(0.0)
     , mds_pred_array()
     , prediction()  {
     }
   MDSPred_(const ContainerAllocator& _alloc)
     : header(_alloc)
+    , target_idx(0)
+    , posX(0.0)
+    , posY(0.0)
+    , velX(0.0)
+    , velY(0.0)
     , mds_pred_array(_alloc)
     , prediction(_alloc)  {
   (void)_alloc;
@@ -40,6 +50,21 @@ struct MDSPred_
 
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
+
+   typedef uint8_t _target_idx_type;
+  _target_idx_type target_idx;
+
+   typedef float _posX_type;
+  _posX_type posX;
+
+   typedef float _posY_type;
+  _posY_type posY;
+
+   typedef float _velX_type;
+  _velX_type velX;
+
+   typedef float _velY_type;
+  _velY_type velY;
 
    typedef std::vector<float, typename ContainerAllocator::template rebind<float>::other >  _mds_pred_array_type;
   _mds_pred_array_type mds_pred_array;
@@ -125,12 +150,12 @@ struct MD5Sum< ::mds_cnn_node_pkg::MDSPred_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "361fca03c0448d6bd3527dc3c4c1a823";
+    return "1f0f31d758f114011921fb9c0d76aee9";
   }
 
   static const char* value(const ::mds_cnn_node_pkg::MDSPred_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x361fca03c0448d6bULL;
-  static const uint64_t static_value2 = 0xd3527dc3c4c1a823ULL;
+  static const uint64_t static_value1 = 0x1f0f31d758f11401ULL;
+  static const uint64_t static_value2 = 0x1921fb9c0d76aee9ULL;
 };
 
 template<class ContainerAllocator>
@@ -150,6 +175,11 @@ struct Definition< ::mds_cnn_node_pkg::MDSPred_<ContainerAllocator> >
   static const char* value()
   {
     return "Header header\n\
+uint8 target_idx\n\
+float32 posX\n\
+float32 posY\n\
+float32 velX\n\
+float32 velY\n\
 float32[] mds_pred_array\n\
 string prediction\n\
 ================================================================================\n\
@@ -188,6 +218,11 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.header);
+      stream.next(m.target_idx);
+      stream.next(m.posX);
+      stream.next(m.posY);
+      stream.next(m.velX);
+      stream.next(m.velY);
       stream.next(m.mds_pred_array);
       stream.next(m.prediction);
     }
@@ -211,6 +246,16 @@ struct Printer< ::mds_cnn_node_pkg::MDSPred_<ContainerAllocator> >
     s << indent << "header: ";
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
+    s << indent << "target_idx: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.target_idx);
+    s << indent << "posX: ";
+    Printer<float>::stream(s, indent + "  ", v.posX);
+    s << indent << "posY: ";
+    Printer<float>::stream(s, indent + "  ", v.posY);
+    s << indent << "velX: ";
+    Printer<float>::stream(s, indent + "  ", v.velX);
+    s << indent << "velY: ";
+    Printer<float>::stream(s, indent + "  ", v.velY);
     s << indent << "mds_pred_array[]" << std::endl;
     for (size_t i = 0; i < v.mds_pred_array.size(); ++i)
     {

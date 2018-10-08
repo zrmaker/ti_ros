@@ -8,10 +8,15 @@ import struct
 import std_msgs.msg
 
 class MDSPred(genpy.Message):
-  _md5sum = "361fca03c0448d6bd3527dc3c4c1a823"
+  _md5sum = "1f0f31d758f114011921fb9c0d76aee9"
   _type = "mds_cnn_node_pkg/MDSPred"
   _has_header = True #flag to mark the presence of a Header object
   _full_text = """Header header
+uint8 target_idx
+float32 posX
+float32 posY
+float32 velX
+float32 velY
 float32[] mds_pred_array
 string prediction
 ================================================================================
@@ -32,8 +37,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['header','mds_pred_array','prediction']
-  _slot_types = ['std_msgs/Header','float32[]','string']
+  __slots__ = ['header','target_idx','posX','posY','velX','velY','mds_pred_array','prediction']
+  _slot_types = ['std_msgs/Header','uint8','float32','float32','float32','float32','float32[]','string']
 
   def __init__(self, *args, **kwds):
     """
@@ -43,7 +48,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,mds_pred_array,prediction
+       header,target_idx,posX,posY,velX,velY,mds_pred_array,prediction
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -54,12 +59,27 @@ string frame_id
       #message fields cannot be None, assign default values for those that are
       if self.header is None:
         self.header = std_msgs.msg.Header()
+      if self.target_idx is None:
+        self.target_idx = 0
+      if self.posX is None:
+        self.posX = 0.
+      if self.posY is None:
+        self.posY = 0.
+      if self.velX is None:
+        self.velX = 0.
+      if self.velY is None:
+        self.velY = 0.
       if self.mds_pred_array is None:
         self.mds_pred_array = []
       if self.prediction is None:
         self.prediction = ''
     else:
       self.header = std_msgs.msg.Header()
+      self.target_idx = 0
+      self.posX = 0.
+      self.posY = 0.
+      self.velX = 0.
+      self.velY = 0.
       self.mds_pred_array = []
       self.prediction = ''
 
@@ -83,6 +103,8 @@ string frame_id
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
+      _x = self
+      buff.write(_get_struct_B4f().pack(_x.target_idx, _x.posX, _x.posY, _x.velX, _x.velY))
       length = len(self.mds_pred_array)
       buff.write(_struct_I.pack(length))
       pattern = '<%sf'%length
@@ -118,6 +140,10 @@ string frame_id
         self.header.frame_id = str[start:end].decode('utf-8')
       else:
         self.header.frame_id = str[start:end]
+      _x = self
+      start = end
+      end += 17
+      (_x.target_idx, _x.posX, _x.posY, _x.velX, _x.velY,) = _get_struct_B4f().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -154,6 +180,8 @@ string frame_id
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
+      _x = self
+      buff.write(_get_struct_B4f().pack(_x.target_idx, _x.posX, _x.posY, _x.velX, _x.velY))
       length = len(self.mds_pred_array)
       buff.write(_struct_I.pack(length))
       pattern = '<%sf'%length
@@ -190,6 +218,10 @@ string frame_id
         self.header.frame_id = str[start:end].decode('utf-8')
       else:
         self.header.frame_id = str[start:end]
+      _x = self
+      start = end
+      end += 17
+      (_x.target_idx, _x.posX, _x.posY, _x.velX, _x.velY,) = _get_struct_B4f().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -220,3 +252,9 @@ def _get_struct_3I():
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
+_struct_B4f = None
+def _get_struct_B4f():
+    global _struct_B4f
+    if _struct_B4f is None:
+        _struct_B4f = struct.Struct("<B4f")
+    return _struct_B4f

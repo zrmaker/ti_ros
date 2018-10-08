@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "micro_doppler_pkg: 1 messages, 0 services")
+message(STATUS "micro_doppler_pkg: 2 messages, 0 services")
 
 set(MSG_I_FLAGS "-Imicro_doppler_pkg:/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
@@ -22,6 +22,11 @@ add_custom_target(_micro_doppler_pkg_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "micro_doppler_pkg" "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg" "std_msgs/Header"
 )
 
+get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg" NAME_WE)
+add_custom_target(_micro_doppler_pkg_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "micro_doppler_pkg" "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg" "std_msgs/Header"
+)
+
 #
 #  langs = gencpp;geneus;genlisp;gennodejs;genpy
 #
@@ -30,6 +35,12 @@ add_custom_target(_micro_doppler_pkg_generate_messages_check_deps_${_filename}
 ### Generating Messages
 _generate_msg_cpp(micro_doppler_pkg
   "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/micro_doppler_pkg
+)
+_generate_msg_cpp(micro_doppler_pkg
+  "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/micro_doppler_pkg
@@ -51,6 +62,8 @@ add_dependencies(micro_doppler_pkg_generate_messages micro_doppler_pkg_generate_
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg" NAME_WE)
 add_dependencies(micro_doppler_pkg_generate_messages_cpp _micro_doppler_pkg_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg" NAME_WE)
+add_dependencies(micro_doppler_pkg_generate_messages_cpp _micro_doppler_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(micro_doppler_pkg_gencpp)
@@ -63,6 +76,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS micro_doppler_pkg_generate_messages
 ### Generating Messages
 _generate_msg_eus(micro_doppler_pkg
   "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/micro_doppler_pkg
+)
+_generate_msg_eus(micro_doppler_pkg
+  "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/micro_doppler_pkg
@@ -84,6 +103,8 @@ add_dependencies(micro_doppler_pkg_generate_messages micro_doppler_pkg_generate_
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg" NAME_WE)
 add_dependencies(micro_doppler_pkg_generate_messages_eus _micro_doppler_pkg_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg" NAME_WE)
+add_dependencies(micro_doppler_pkg_generate_messages_eus _micro_doppler_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(micro_doppler_pkg_geneus)
@@ -96,6 +117,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS micro_doppler_pkg_generate_messages
 ### Generating Messages
 _generate_msg_lisp(micro_doppler_pkg
   "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/micro_doppler_pkg
+)
+_generate_msg_lisp(micro_doppler_pkg
+  "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/micro_doppler_pkg
@@ -117,6 +144,8 @@ add_dependencies(micro_doppler_pkg_generate_messages micro_doppler_pkg_generate_
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg" NAME_WE)
 add_dependencies(micro_doppler_pkg_generate_messages_lisp _micro_doppler_pkg_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg" NAME_WE)
+add_dependencies(micro_doppler_pkg_generate_messages_lisp _micro_doppler_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(micro_doppler_pkg_genlisp)
@@ -129,6 +158,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS micro_doppler_pkg_generate_messages
 ### Generating Messages
 _generate_msg_nodejs(micro_doppler_pkg
   "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/micro_doppler_pkg
+)
+_generate_msg_nodejs(micro_doppler_pkg
+  "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/micro_doppler_pkg
@@ -150,6 +185,8 @@ add_dependencies(micro_doppler_pkg_generate_messages micro_doppler_pkg_generate_
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg" NAME_WE)
 add_dependencies(micro_doppler_pkg_generate_messages_nodejs _micro_doppler_pkg_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg" NAME_WE)
+add_dependencies(micro_doppler_pkg_generate_messages_nodejs _micro_doppler_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(micro_doppler_pkg_gennodejs)
@@ -162,6 +199,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS micro_doppler_pkg_generate_messages
 ### Generating Messages
 _generate_msg_py(micro_doppler_pkg
   "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/micro_doppler_pkg
+)
+_generate_msg_py(micro_doppler_pkg
+  "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/micro_doppler_pkg
@@ -182,6 +225,8 @@ add_dependencies(micro_doppler_pkg_generate_messages micro_doppler_pkg_generate_
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg" NAME_WE)
+add_dependencies(micro_doppler_pkg_generate_messages_py _micro_doppler_pkg_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg" NAME_WE)
 add_dependencies(micro_doppler_pkg_generate_messages_py _micro_doppler_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

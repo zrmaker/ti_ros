@@ -463,10 +463,10 @@ void *DataUARTHandler::sortIncomingData( void )
                     {
                         if( radarscan_lf[i].target_idx == TargetListDataSet[j].tid )
                         {
-                            radarscan_pub.posX          = TargetListDataSet[j].posX;
-                            radarscan_pub.posY          = TargetListDataSet[j].posY;
-                            radarscan_pub.velX          = TargetListDataSet[j].posX;
-                            radarscan_pub.posX          = TargetListDataSet[j].posX;
+                            radarscan_pub.posX          = TargetListDataSet[j].posY;
+                            radarscan_pub.posY          = TargetListDataSet[j].posX;
+                            radarscan_pub.velX          = TargetListDataSet[j].velY;
+                            radarscan_pub.velY          = TargetListDataSet[j].velX;
                         }
                     } 
                     

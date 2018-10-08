@@ -1,2 +1,2 @@
-set(micro_doppler_pkg_MESSAGE_FILES "msg/MicroDoppler.msg")
+set(micro_doppler_pkg_MESSAGE_FILES "msg/MicroDoppler.msg;msg/MicroDoppler_m.msg")
 set(micro_doppler_pkg_SERVICE_FILES "")

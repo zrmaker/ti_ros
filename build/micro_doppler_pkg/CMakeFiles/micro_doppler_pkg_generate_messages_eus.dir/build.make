@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/ece561/Projects/ti_ros/build
 include micro_doppler_pkg/CMakeFiles/micro_doppler_pkg_generate_messages_eus.dir/progress.make
 
 micro_doppler_pkg/CMakeFiles/micro_doppler_pkg_generate_messages_eus: /home/ece561/Projects/ti_ros/devel/share/roseus/ros/micro_doppler_pkg/msg/MicroDoppler.l
+micro_doppler_pkg/CMakeFiles/micro_doppler_pkg_generate_messages_eus: /home/ece561/Projects/ti_ros/devel/share/roseus/ros/micro_doppler_pkg/msg/MicroDoppler_m.l
 micro_doppler_pkg/CMakeFiles/micro_doppler_pkg_generate_messages_eus: /home/ece561/Projects/ti_ros/devel/share/roseus/ros/micro_doppler_pkg/manifest.l
 
 
@@ -63,12 +64,19 @@ micro_doppler_pkg/CMakeFiles/micro_doppler_pkg_generate_messages_eus: /home/ece5
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ece561/Projects/ti_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from micro_doppler_pkg/MicroDoppler.msg"
 	cd /home/ece561/Projects/ti_ros/build/micro_doppler_pkg && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg -Imicro_doppler_pkg:/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p micro_doppler_pkg -o /home/ece561/Projects/ti_ros/devel/share/roseus/ros/micro_doppler_pkg/msg
 
+/home/ece561/Projects/ti_ros/devel/share/roseus/ros/micro_doppler_pkg/msg/MicroDoppler_m.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/ece561/Projects/ti_ros/devel/share/roseus/ros/micro_doppler_pkg/msg/MicroDoppler_m.l: /home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg
+/home/ece561/Projects/ti_ros/devel/share/roseus/ros/micro_doppler_pkg/msg/MicroDoppler_m.l: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ece561/Projects/ti_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from micro_doppler_pkg/MicroDoppler_m.msg"
+	cd /home/ece561/Projects/ti_ros/build/micro_doppler_pkg && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg -Imicro_doppler_pkg:/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p micro_doppler_pkg -o /home/ece561/Projects/ti_ros/devel/share/roseus/ros/micro_doppler_pkg/msg
+
 /home/ece561/Projects/ti_ros/devel/share/roseus/ros/micro_doppler_pkg/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ece561/Projects/ti_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for micro_doppler_pkg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ece561/Projects/ti_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for micro_doppler_pkg"
 	cd /home/ece561/Projects/ti_ros/build/micro_doppler_pkg && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/ece561/Projects/ti_ros/devel/share/roseus/ros/micro_doppler_pkg micro_doppler_pkg std_msgs
 
 micro_doppler_pkg_generate_messages_eus: micro_doppler_pkg/CMakeFiles/micro_doppler_pkg_generate_messages_eus
 micro_doppler_pkg_generate_messages_eus: /home/ece561/Projects/ti_ros/devel/share/roseus/ros/micro_doppler_pkg/msg/MicroDoppler.l
+micro_doppler_pkg_generate_messages_eus: /home/ece561/Projects/ti_ros/devel/share/roseus/ros/micro_doppler_pkg/msg/MicroDoppler_m.l
 micro_doppler_pkg_generate_messages_eus: /home/ece561/Projects/ti_ros/devel/share/roseus/ros/micro_doppler_pkg/manifest.l
 micro_doppler_pkg_generate_messages_eus: micro_doppler_pkg/CMakeFiles/micro_doppler_pkg_generate_messages_eus.dir/build.make
 

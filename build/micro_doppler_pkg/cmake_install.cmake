@@ -33,7 +33,10 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/micro_doppler_pkg/msg" TYPE FILE FILES "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/micro_doppler_pkg/msg" TYPE FILE FILES
+    "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg"
+    "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")

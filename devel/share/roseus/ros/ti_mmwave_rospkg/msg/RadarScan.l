@@ -16,7 +16,7 @@
 
 (defclass ti_mmwave_rospkg::RadarScan
   :super ros::object
-  :slots (_header _point_id _target_idx _x _y _z _range _velocity _doppler_bin _bearing _intensity _posX _posY _velX _vely ))
+  :slots (_header _point_id _target_idx _x _y _z _range _velocity _doppler_bin _bearing _intensity _posX _posY _velX _velY ))
 
 (defmethod ti_mmwave_rospkg::RadarScan
   (:init
@@ -35,7 +35,7 @@
     ((:posX __posX) 0.0)
     ((:posY __posY) 0.0)
     ((:velX __velX) 0.0)
-    ((:vely __vely) 0.0)
+    ((:velY __velY) 0.0)
     )
    (send-super :init)
    (setq _header __header)
@@ -52,7 +52,7 @@
    (setq _posX (float __posX))
    (setq _posY (float __posY))
    (setq _velX (float __velX))
-   (setq _vely (float __vely))
+   (setq _velY (float __velY))
    self)
   (:header
    (&rest __header)
@@ -100,9 +100,9 @@
   (:velX
    (&optional __velX)
    (if __velX (setq _velX __velX)) _velX)
-  (:vely
-   (&optional __vely)
-   (if __vely (setq _vely __vely)) _vely)
+  (:velY
+   (&optional __velY)
+   (if __velY (setq _velY __velY)) _velY)
   (:serialization-length
    ()
    (+
@@ -134,7 +134,7 @@
     4
     ;; float32 _velX
     4
-    ;; float32 _vely
+    ;; float32 _velY
     4
     ))
   (:serialize
@@ -169,8 +169,8 @@
        (sys::poke _posY (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;; float32 _velX
        (sys::poke _velX (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
-     ;; float32 _vely
-       (sys::poke _vely (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _velY
+       (sys::poke _velY (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -203,13 +203,13 @@
      (setq _posY (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;; float32 _velX
      (setq _velX (sys::peek buf ptr- :float)) (incf ptr- 4)
-   ;; float32 _vely
-     (setq _vely (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _velY
+     (setq _velY (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;;
    self)
   )
 
-(setf (get ti_mmwave_rospkg::RadarScan :md5sum-) "df3a7f420e430dcff20c0a9e2b1968fe")
+(setf (get ti_mmwave_rospkg::RadarScan :md5sum-) "a4d09446d2fc17ce80358b29d25af8b6")
 (setf (get ti_mmwave_rospkg::RadarScan :datatype-) "ti_mmwave_rospkg/RadarScan")
 (setf (get ti_mmwave_rospkg::RadarScan :definition-)
       "Header header
@@ -226,7 +226,8 @@ float32 intensity
 float32 posX
 float32 posY
 float32 velX
-float32 vely
+float32 velY
+
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -249,6 +250,6 @@ string frame_id
 
 
 
-(provide :ti_mmwave_rospkg/RadarScan "df3a7f420e430dcff20c0a9e2b1968fe")
+(provide :ti_mmwave_rospkg/RadarScan "a4d09446d2fc17ce80358b29d25af8b6")
 
 

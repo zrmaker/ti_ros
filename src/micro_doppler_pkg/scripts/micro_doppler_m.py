@@ -5,7 +5,7 @@ import argparse
 import rospy
 import numpy as np
 import math
-from micro_doppler_pkg.msg import MicroDoppler
+from micro_doppler_pkg.msg import MicroDoppler_m
 from ti_mmwave_rospkg.msg import RadarScan
 
 class micro_doppler_signature:
@@ -25,24 +25,29 @@ class micro_doppler_signature:
 
         self.mds_array = np.zeros((self.nd, self.time_domain_bins, 253))
         self.prev_id = 0
-        self.tmp_data = np.empty((4,0))
+        self.tmp_data = np.empty((8,0))
 
     def ti_doppler_parser(self, radar):
         if radar.point_id < self.prev_id:
             self.micro_doppler()
         self.prev_id = radar.point_id
         if radar.target_idx < 253:
-            tmp = np.array([radar.target_idx, radar.range, radar.doppler_bin, radar.intensity])
+            tmp = np.array([radar.target_idx, radar.range, radar.doppler_bin, radar.intensity, radar.posX, radar.posY, radar.velX, radar.velY])
             self.tmp_data = np.append(self.tmp_data, tmp.reshape((-1,1)), axis = 1)
         
 
     def micro_doppler(self):
         targets = np.array(np.int_(np.unique(self.tmp_data[0,:])))
+        targets_sorting = np.zeros((targets.size,4))
         mds_cur = np.zeros((targets.size,self.nd))
         for i in range(self.tmp_data.shape[1]):
             tmp = np.where(targets == int(self.tmp_data[0,i]))
             # range compensation
             mds_cur[tmp[0][0],int(self.tmp_data[2,i])] += self.tmp_data[3,i] * self.tmp_data[1,i]**2
+            targets_sorting[tmp[0][0],0] = self.tmp_data[4,i]
+            targets_sorting[tmp[0][0],1] = self.tmp_data[5,i]
+            targets_sorting[tmp[0][0],2] = self.tmp_data[6,i]
+            targets_sorting[tmp[0][0],3] = self.tmp_data[7,i]
 
         if targets.size > 1:
             for i in range(targets.size):
@@ -59,13 +64,17 @@ class micro_doppler_signature:
                 mds_list = self.mds_array[:,:,targets[i]].flatten().tolist()
                 
                 # publish msg
-                mds_msg = MicroDoppler()
+                mds_msg = MicroDoppler_m()
                 mds_msg.header.frame_id = self.frame_id
                 mds_msg.header.stamp = rospy.Time.now()
                 mds_msg.time_domain_bins = self.time_domain_bins
                 mds_msg.num_chirps = self.nd
                 mds_msg.target_idx = targets[i]
                 mds_msg.micro_doppler_array = mds_list
+                mds_msg.posX = targets_sorting[i,0]
+                mds_msg.posY = targets_sorting[i,1]
+                mds_msg.velX = targets_sorting[i,2]
+                mds_msg.velY = targets_sorting[i,3]
                 
                 self.pub_.publish(mds_msg)
         elif targets.size == 1:
@@ -82,21 +91,25 @@ class micro_doppler_signature:
             mds_list = self.mds_array[:,:,targets].flatten().tolist()
             
             # publish msg
-            mds_msg = MicroDoppler()
+            mds_msg = MicroDoppler_m()
             mds_msg.header.frame_id = self.frame_id
             mds_msg.header.stamp = rospy.Time.now()
             mds_msg.time_domain_bins = self.time_domain_bins
             mds_msg.num_chirps = self.nd
             mds_msg.target_idx = targets
             mds_msg.micro_doppler_array = mds_list
+            mds_msg.posX = targets_sorting[0,0]
+            mds_msg.posY = targets_sorting[0,1]
+            mds_msg.velX = targets_sorting[0,2]
+            mds_msg.velY = targets_sorting[0,3]
             self.pub_.publish(mds_msg)
 
-        self.tmp_data = np.empty((4,0))
+        self.tmp_data = np.empty((8,0))
 
     def main(self):
         rospy.init_node('micro_doppler_node')
         self.sub_ = rospy.Subscriber('/ti_mmwave/radar_scan', RadarScan, self.ti_doppler_parser)
-        self.pub_ = rospy.Publisher('/ti_mmwave/micro_doppler', MicroDoppler, queue_size=100)
+        self.pub_ = rospy.Publisher('/ti_mmwave/micro_doppler', MicroDoppler_m, queue_size=100)
         rospy.spin()
         
 if __name__ == '__main__':

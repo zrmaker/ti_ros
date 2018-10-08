@@ -33,7 +33,7 @@ class RadarScan {
       this.posX = null;
       this.posY = null;
       this.velX = null;
-      this.vely = null;
+      this.velY = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -120,11 +120,11 @@ class RadarScan {
       else {
         this.velX = 0.0;
       }
-      if (initObj.hasOwnProperty('vely')) {
-        this.vely = initObj.vely
+      if (initObj.hasOwnProperty('velY')) {
+        this.velY = initObj.velY
       }
       else {
-        this.vely = 0.0;
+        this.velY = 0.0;
       }
     }
   }
@@ -159,8 +159,8 @@ class RadarScan {
     bufferOffset = _serializer.float32(obj.posY, buffer, bufferOffset);
     // Serialize message field [velX]
     bufferOffset = _serializer.float32(obj.velX, buffer, bufferOffset);
-    // Serialize message field [vely]
-    bufferOffset = _serializer.float32(obj.vely, buffer, bufferOffset);
+    // Serialize message field [velY]
+    bufferOffset = _serializer.float32(obj.velY, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -196,8 +196,8 @@ class RadarScan {
     data.posY = _deserializer.float32(buffer, bufferOffset);
     // Deserialize message field [velX]
     data.velX = _deserializer.float32(buffer, bufferOffset);
-    // Deserialize message field [vely]
-    data.vely = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [velY]
+    data.velY = _deserializer.float32(buffer, bufferOffset);
     return data;
   }
 
@@ -214,7 +214,7 @@ class RadarScan {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'df3a7f420e430dcff20c0a9e2b1968fe';
+    return 'a4d09446d2fc17ce80358b29d25af8b6';
   }
 
   static messageDefinition() {
@@ -234,7 +234,8 @@ class RadarScan {
     float32 posX
     float32 posY
     float32 velX
-    float32 vely
+    float32 velY
+    
     ================================================================================
     MSG: std_msgs/Header
     # Standard metadata for higher-level stamped data types.
@@ -360,11 +361,11 @@ class RadarScan {
       resolved.velX = 0.0
     }
 
-    if (msg.vely !== undefined) {
-      resolved.vely = msg.vely;
+    if (msg.velY !== undefined) {
+      resolved.velY = msg.velY;
     }
     else {
-      resolved.vely = 0.0
+      resolved.velY = 0.0
     }
 
     return resolved;

@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/ece561/Projects/ti_ros/build
 include micro_doppler_pkg/CMakeFiles/micro_doppler_pkg_generate_messages_cpp.dir/progress.make
 
 micro_doppler_pkg/CMakeFiles/micro_doppler_pkg_generate_messages_cpp: /home/ece561/Projects/ti_ros/devel/include/micro_doppler_pkg/MicroDoppler.h
+micro_doppler_pkg/CMakeFiles/micro_doppler_pkg_generate_messages_cpp: /home/ece561/Projects/ti_ros/devel/include/micro_doppler_pkg/MicroDoppler_m.h
 
 
 /home/ece561/Projects/ti_ros/devel/include/micro_doppler_pkg/MicroDoppler.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
@@ -63,8 +64,16 @@ micro_doppler_pkg/CMakeFiles/micro_doppler_pkg_generate_messages_cpp: /home/ece5
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ece561/Projects/ti_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from micro_doppler_pkg/MicroDoppler.msg"
 	cd /home/ece561/Projects/ti_ros/src/micro_doppler_pkg && /home/ece561/Projects/ti_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg -Imicro_doppler_pkg:/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p micro_doppler_pkg -o /home/ece561/Projects/ti_ros/devel/include/micro_doppler_pkg -e /opt/ros/kinetic/share/gencpp/cmake/..
 
+/home/ece561/Projects/ti_ros/devel/include/micro_doppler_pkg/MicroDoppler_m.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/ece561/Projects/ti_ros/devel/include/micro_doppler_pkg/MicroDoppler_m.h: /home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg
+/home/ece561/Projects/ti_ros/devel/include/micro_doppler_pkg/MicroDoppler_m.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/ece561/Projects/ti_ros/devel/include/micro_doppler_pkg/MicroDoppler_m.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ece561/Projects/ti_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from micro_doppler_pkg/MicroDoppler_m.msg"
+	cd /home/ece561/Projects/ti_ros/src/micro_doppler_pkg && /home/ece561/Projects/ti_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg -Imicro_doppler_pkg:/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p micro_doppler_pkg -o /home/ece561/Projects/ti_ros/devel/include/micro_doppler_pkg -e /opt/ros/kinetic/share/gencpp/cmake/..
+
 micro_doppler_pkg_generate_messages_cpp: micro_doppler_pkg/CMakeFiles/micro_doppler_pkg_generate_messages_cpp
 micro_doppler_pkg_generate_messages_cpp: /home/ece561/Projects/ti_ros/devel/include/micro_doppler_pkg/MicroDoppler.h
+micro_doppler_pkg_generate_messages_cpp: /home/ece561/Projects/ti_ros/devel/include/micro_doppler_pkg/MicroDoppler_m.h
 micro_doppler_pkg_generate_messages_cpp: micro_doppler_pkg/CMakeFiles/micro_doppler_pkg_generate_messages_cpp.dir/build.make
 
 .PHONY : micro_doppler_pkg_generate_messages_cpp
