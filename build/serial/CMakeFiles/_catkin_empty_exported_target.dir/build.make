@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ece561/Projects/ti_ros/src
+CMAKE_SOURCE_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ece561/Projects/ti_ros/build
+CMAKE_BINARY_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/build
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -63,10 +63,10 @@ serial/CMakeFiles/_catkin_empty_exported_target.dir/build: _catkin_empty_exporte
 .PHONY : serial/CMakeFiles/_catkin_empty_exported_target.dir/build
 
 serial/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	cd /home/ece561/Projects/ti_ros/build/serial && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
 .PHONY : serial/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 serial/CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/ece561/Projects/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ece561/Projects/ti_ros/src /home/ece561/Projects/ti_ros/src/serial /home/ece561/Projects/ti_ros/build /home/ece561/Projects/ti_ros/build/serial /home/ece561/Projects/ti_ros/build/serial/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/ryzhang/Downloads/ti_ros/src /mnt/c/Users/ryzhang/Downloads/ti_ros/src/serial /mnt/c/Users/ryzhang/Downloads/ti_ros/build /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : serial/CMakeFiles/_catkin_empty_exported_target.dir/depend
 

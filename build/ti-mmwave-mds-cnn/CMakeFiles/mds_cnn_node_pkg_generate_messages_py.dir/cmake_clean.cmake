@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/mds_cnn_node_pkg_generate_messages_py"
-  "/home/ece561/Projects/ti_ros/devel/lib/python2.7/dist-packages/mds_cnn_node_pkg/msg/_MDSPred.py"
-  "/home/ece561/Projects/ti_ros/devel/lib/python2.7/dist-packages/mds_cnn_node_pkg/msg/__init__.py"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/python2.7/dist-packages/mds_cnn_node_pkg/msg/_MDSPred.py"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/python2.7/dist-packages/mds_cnn_node_pkg/msg/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

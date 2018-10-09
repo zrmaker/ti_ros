@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ti_mmwave_rospkg_generate_messages_eus"
-  "/home/ece561/Projects/ti_ros/devel/share/roseus/ros/ti_mmwave_rospkg/msg/RadarScan.l"
-  "/home/ece561/Projects/ti_ros/devel/share/roseus/ros/ti_mmwave_rospkg/srv/mmWaveCLI.l"
-  "/home/ece561/Projects/ti_ros/devel/share/roseus/ros/ti_mmwave_rospkg/manifest.l"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/share/roseus/ros/ti_mmwave_rospkg/msg/RadarScan.l"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/share/roseus/ros/ti_mmwave_rospkg/srv/mmWaveCLI.l"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/share/roseus/ros/ti_mmwave_rospkg/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

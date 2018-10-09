@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ece561/Projects/ti_ros/src
+CMAKE_SOURCE_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ece561/Projects/ti_ros/build
+CMAKE_BINARY_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/build
 
 # Utility rule file for doxygen.
 
@@ -67,6 +67,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/ece561/Projects/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ece561/Projects/ti_ros/src /home/ece561/Projects/ti_ros/src /home/ece561/Projects/ti_ros/build /home/ece561/Projects/ti_ros/build /home/ece561/Projects/ti_ros/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/ryzhang/Downloads/ti_ros/src /mnt/c/Users/ryzhang/Downloads/ti_ros/src /mnt/c/Users/ryzhang/Downloads/ti_ros/build /mnt/c/Users/ryzhang/Downloads/ti_ros/build /mnt/c/Users/ryzhang/Downloads/ti_ros/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

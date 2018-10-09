@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ece561/Projects/ti_ros/src
+CMAKE_SOURCE_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ece561/Projects/ti_ros/build
+CMAKE_BINARY_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/build
 
 # Utility rule file for bond_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ ti_mmwave_rospkg/CMakeFiles/bond_generate_messages_nodejs.dir/build: bond_genera
 .PHONY : ti_mmwave_rospkg/CMakeFiles/bond_generate_messages_nodejs.dir/build
 
 ti_mmwave_rospkg/CMakeFiles/bond_generate_messages_nodejs.dir/clean:
-	cd /home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg && $(CMAKE_COMMAND) -P CMakeFiles/bond_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg && $(CMAKE_COMMAND) -P CMakeFiles/bond_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : ti_mmwave_rospkg/CMakeFiles/bond_generate_messages_nodejs.dir/clean
 
 ti_mmwave_rospkg/CMakeFiles/bond_generate_messages_nodejs.dir/depend:
-	cd /home/ece561/Projects/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ece561/Projects/ti_ros/src /home/ece561/Projects/ti_ros/src/ti_mmwave_rospkg /home/ece561/Projects/ti_ros/build /home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg /home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg/CMakeFiles/bond_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/ryzhang/Downloads/ti_ros/src /mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti_mmwave_rospkg /mnt/c/Users/ryzhang/Downloads/ti_ros/build /mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg /mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg/CMakeFiles/bond_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ti_mmwave_rospkg/CMakeFiles/bond_generate_messages_nodejs.dir/depend
 

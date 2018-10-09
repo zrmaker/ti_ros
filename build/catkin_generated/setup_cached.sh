@@ -7,4 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/ece561/Projects/ti_ros/build"
+export CMAKE_PREFIX_PATH="/mnt/c/Users/ryzhang/Downloads/ti_ros/devel:$CMAKE_PREFIX_PATH"
+export PWD="/mnt/c/Users/ryzhang/Downloads/ti_ros/build"
+export ROSLISP_PACKAGE_DIRECTORIES="/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/mnt/c/Users/ryzhang/Downloads/ti_ros/src:$ROS_PACKAGE_PATH"

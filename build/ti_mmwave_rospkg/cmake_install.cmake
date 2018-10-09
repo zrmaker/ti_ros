@@ -1,8 +1,8 @@
-# Install script for directory: /home/ece561/Projects/ti_ros/src/ti_mmwave_rospkg
+# Install script for directory: /mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti_mmwave_rospkg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ece561/Projects/ti_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/mnt/c/Users/ryzhang/Downloads/ti_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,57 +33,57 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ti_mmwave_rospkg/msg" TYPE FILE FILES "/home/ece561/Projects/ti_ros/src/ti_mmwave_rospkg/msg/RadarScan.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ti_mmwave_rospkg/msg" TYPE FILE FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti_mmwave_rospkg/msg/RadarScan.msg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ti_mmwave_rospkg/srv" TYPE FILE FILES "/home/ece561/Projects/ti_ros/src/ti_mmwave_rospkg/srv/mmWaveCLI.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ti_mmwave_rospkg/srv" TYPE FILE FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti_mmwave_rospkg/srv/mmWaveCLI.srv")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ti_mmwave_rospkg/cmake" TYPE FILE FILES "/home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg/catkin_generated/installspace/ti_mmwave_rospkg-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ti_mmwave_rospkg/cmake" TYPE FILE FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg/catkin_generated/installspace/ti_mmwave_rospkg-msg-paths.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ece561/Projects/ti_ros/devel/include/ti_mmwave_rospkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/include/ti_mmwave_rospkg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/ece561/Projects/ti_ros/devel/share/roseus/ros/ti_mmwave_rospkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/share/roseus/ros/ti_mmwave_rospkg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/ece561/Projects/ti_ros/devel/share/common-lisp/ros/ti_mmwave_rospkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/share/common-lisp/ros/ti_mmwave_rospkg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/ece561/Projects/ti_ros/devel/share/gennodejs/ros/ti_mmwave_rospkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/share/gennodejs/ros/ti_mmwave_rospkg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/ece561/Projects/ti_ros/devel/lib/python2.7/dist-packages/ti_mmwave_rospkg")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/python2.7/dist-packages/ti_mmwave_rospkg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/ece561/Projects/ti_ros/devel/lib/python2.7/dist-packages/ti_mmwave_rospkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/python2.7/dist-packages/ti_mmwave_rospkg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg/catkin_generated/installspace/ti_mmwave_rospkg.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg/catkin_generated/installspace/ti_mmwave_rospkg.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ti_mmwave_rospkg/cmake" TYPE FILE FILES "/home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg/catkin_generated/installspace/ti_mmwave_rospkg-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ti_mmwave_rospkg/cmake" TYPE FILE FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg/catkin_generated/installspace/ti_mmwave_rospkg-msg-extras.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ti_mmwave_rospkg/cmake" TYPE FILE FILES
-    "/home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg/catkin_generated/installspace/ti_mmwave_rospkgConfig.cmake"
-    "/home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg/catkin_generated/installspace/ti_mmwave_rospkgConfig-version.cmake"
+    "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg/catkin_generated/installspace/ti_mmwave_rospkgConfig.cmake"
+    "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg/catkin_generated/installspace/ti_mmwave_rospkgConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ti_mmwave_rospkg" TYPE FILE FILES "/home/ece561/Projects/ti_ros/src/ti_mmwave_rospkg/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ti_mmwave_rospkg" TYPE FILE FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti_mmwave_rospkg/package.xml")
 endif()
 

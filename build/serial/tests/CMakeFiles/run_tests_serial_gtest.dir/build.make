@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ece561/Projects/ti_ros/src
+CMAKE_SOURCE_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ece561/Projects/ti_ros/build
+CMAKE_BINARY_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/build
 
 # Utility rule file for run_tests_serial_gtest.
 
@@ -63,10 +63,10 @@ serial/tests/CMakeFiles/run_tests_serial_gtest.dir/build: run_tests_serial_gtest
 .PHONY : serial/tests/CMakeFiles/run_tests_serial_gtest.dir/build
 
 serial/tests/CMakeFiles/run_tests_serial_gtest.dir/clean:
-	cd /home/ece561/Projects/ti_ros/build/serial/tests && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_serial_gtest.dir/cmake_clean.cmake
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial/tests && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_serial_gtest.dir/cmake_clean.cmake
 .PHONY : serial/tests/CMakeFiles/run_tests_serial_gtest.dir/clean
 
 serial/tests/CMakeFiles/run_tests_serial_gtest.dir/depend:
-	cd /home/ece561/Projects/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ece561/Projects/ti_ros/src /home/ece561/Projects/ti_ros/src/serial/tests /home/ece561/Projects/ti_ros/build /home/ece561/Projects/ti_ros/build/serial/tests /home/ece561/Projects/ti_ros/build/serial/tests/CMakeFiles/run_tests_serial_gtest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/ryzhang/Downloads/ti_ros/src /mnt/c/Users/ryzhang/Downloads/ti_ros/src/serial/tests /mnt/c/Users/ryzhang/Downloads/ti_ros/build /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial/tests /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial/tests/CMakeFiles/run_tests_serial_gtest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : serial/tests/CMakeFiles/run_tests_serial_gtest.dir/depend
 

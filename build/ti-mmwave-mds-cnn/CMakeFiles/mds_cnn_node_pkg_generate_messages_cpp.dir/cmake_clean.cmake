@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/mds_cnn_node_pkg_generate_messages_cpp"
-  "/home/ece561/Projects/ti_ros/devel/include/mds_cnn_node_pkg/MDSPred.h"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/include/mds_cnn_node_pkg/MDSPred.h"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,8 @@
-# Install script for directory: /home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn
+# Install script for directory: /mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ece561/Projects/ti_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/mnt/c/Users/ryzhang/Downloads/ti_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,34 +33,34 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mds_cnn_node_pkg/msg" TYPE FILE FILES "/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mds_cnn_node_pkg/msg" TYPE FILE FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mds_cnn_node_pkg/cmake" TYPE FILE FILES "/home/ece561/Projects/ti_ros/build/ti-mmwave-mds-cnn/catkin_generated/installspace/mds_cnn_node_pkg-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mds_cnn_node_pkg/cmake" TYPE FILE FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti-mmwave-mds-cnn/catkin_generated/installspace/mds_cnn_node_pkg-msg-paths.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ece561/Projects/ti_ros/devel/include/mds_cnn_node_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/include/mds_cnn_node_pkg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/ece561/Projects/ti_ros/devel/share/roseus/ros/mds_cnn_node_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/share/roseus/ros/mds_cnn_node_pkg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/ece561/Projects/ti_ros/devel/share/common-lisp/ros/mds_cnn_node_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/share/common-lisp/ros/mds_cnn_node_pkg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/ece561/Projects/ti_ros/devel/share/gennodejs/ros/mds_cnn_node_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/share/gennodejs/ros/mds_cnn_node_pkg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/ece561/Projects/ti_ros/devel/lib/python2.7/dist-packages/mds_cnn_node_pkg")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/python2.7/dist-packages/mds_cnn_node_pkg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/ece561/Projects/ti_ros/devel/lib/python2.7/dist-packages/mds_cnn_node_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/python2.7/dist-packages/mds_cnn_node_pkg")
 endif()
 

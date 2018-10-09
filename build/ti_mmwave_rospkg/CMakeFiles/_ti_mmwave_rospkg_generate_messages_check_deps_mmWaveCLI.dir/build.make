@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ece561/Projects/ti_ros/src
+CMAKE_SOURCE_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ece561/Projects/ti_ros/build
+CMAKE_BINARY_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/build
 
 # Utility rule file for _ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ece561/Projects/ti_ros/build
 include ti_mmwave_rospkg/CMakeFiles/_ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI.dir/progress.make
 
 ti_mmwave_rospkg/CMakeFiles/_ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI:
-	cd /home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ti_mmwave_rospkg /home/ece561/Projects/ti_ros/src/ti_mmwave_rospkg/srv/mmWaveCLI.srv 
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ti_mmwave_rospkg /mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti_mmwave_rospkg/srv/mmWaveCLI.srv 
 
 _ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI: ti_mmwave_rospkg/CMakeFiles/_ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI
 _ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI: ti_mmwave_rospkg/CMakeFiles/_ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI.dir/build.make
@@ -67,10 +67,10 @@ ti_mmwave_rospkg/CMakeFiles/_ti_mmwave_rospkg_generate_messages_check_deps_mmWav
 .PHONY : ti_mmwave_rospkg/CMakeFiles/_ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI.dir/build
 
 ti_mmwave_rospkg/CMakeFiles/_ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI.dir/clean:
-	cd /home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg && $(CMAKE_COMMAND) -P CMakeFiles/_ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI.dir/cmake_clean.cmake
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg && $(CMAKE_COMMAND) -P CMakeFiles/_ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI.dir/cmake_clean.cmake
 .PHONY : ti_mmwave_rospkg/CMakeFiles/_ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI.dir/clean
 
 ti_mmwave_rospkg/CMakeFiles/_ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI.dir/depend:
-	cd /home/ece561/Projects/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ece561/Projects/ti_ros/src /home/ece561/Projects/ti_ros/src/ti_mmwave_rospkg /home/ece561/Projects/ti_ros/build /home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg /home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg/CMakeFiles/_ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/ryzhang/Downloads/ti_ros/src /mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti_mmwave_rospkg /mnt/c/Users/ryzhang/Downloads/ti_ros/build /mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg /mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg/CMakeFiles/_ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ti_mmwave_rospkg/CMakeFiles/_ti_mmwave_rospkg_generate_messages_check_deps_mmWaveCLI.dir/depend
 

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ti_mmwave_rospkg_generate_messages_nodejs"
-  "/home/ece561/Projects/ti_ros/devel/share/gennodejs/ros/ti_mmwave_rospkg/msg/RadarScan.js"
-  "/home/ece561/Projects/ti_ros/devel/share/gennodejs/ros/ti_mmwave_rospkg/srv/mmWaveCLI.js"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/share/gennodejs/ros/ti_mmwave_rospkg/msg/RadarScan.js"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/share/gennodejs/ros/ti_mmwave_rospkg/srv/mmWaveCLI.js"
 )
 
 # Per-language clean rules from dependency scanning.

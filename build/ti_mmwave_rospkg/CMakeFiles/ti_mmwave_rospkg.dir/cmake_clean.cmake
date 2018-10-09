@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ti_mmwave_rospkg.dir/src/mmWaveLoader.cpp.o"
-  "/home/ece561/Projects/ti_ros/devel/lib/ti_mmwave_rospkg/ti_mmwave_rospkg.pdb"
-  "/home/ece561/Projects/ti_ros/devel/lib/ti_mmwave_rospkg/ti_mmwave_rospkg"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/ti_mmwave_rospkg/ti_mmwave_rospkg.pdb"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/ti_mmwave_rospkg/ti_mmwave_rospkg"
 )
 
 # Per-language clean rules from dependency scanning.

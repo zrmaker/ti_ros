@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ece561/Projects/ti_ros/src
+CMAKE_SOURCE_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ece561/Projects/ti_ros/build
+CMAKE_BINARY_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/build
 
 # Utility rule file for clean_test_results_serial.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ece561/Projects/ti_ros/build
 include serial/tests/CMakeFiles/clean_test_results_serial.dir/progress.make
 
 serial/tests/CMakeFiles/clean_test_results_serial:
-	cd /home/ece561/Projects/ti_ros/build/serial/tests && /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/ece561/Projects/ti_ros/build/test_results/serial
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial/tests && /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /mnt/c/Users/ryzhang/Downloads/ti_ros/build/test_results/serial
 
 clean_test_results_serial: serial/tests/CMakeFiles/clean_test_results_serial
 clean_test_results_serial: serial/tests/CMakeFiles/clean_test_results_serial.dir/build.make
@@ -67,10 +67,10 @@ serial/tests/CMakeFiles/clean_test_results_serial.dir/build: clean_test_results_
 .PHONY : serial/tests/CMakeFiles/clean_test_results_serial.dir/build
 
 serial/tests/CMakeFiles/clean_test_results_serial.dir/clean:
-	cd /home/ece561/Projects/ti_ros/build/serial/tests && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_serial.dir/cmake_clean.cmake
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial/tests && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_serial.dir/cmake_clean.cmake
 .PHONY : serial/tests/CMakeFiles/clean_test_results_serial.dir/clean
 
 serial/tests/CMakeFiles/clean_test_results_serial.dir/depend:
-	cd /home/ece561/Projects/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ece561/Projects/ti_ros/src /home/ece561/Projects/ti_ros/src/serial/tests /home/ece561/Projects/ti_ros/build /home/ece561/Projects/ti_ros/build/serial/tests /home/ece561/Projects/ti_ros/build/serial/tests/CMakeFiles/clean_test_results_serial.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/ryzhang/Downloads/ti_ros/src /mnt/c/Users/ryzhang/Downloads/ti_ros/src/serial/tests /mnt/c/Users/ryzhang/Downloads/ti_ros/build /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial/tests /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial/tests/CMakeFiles/clean_test_results_serial.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : serial/tests/CMakeFiles/clean_test_results_serial.dir/depend
 

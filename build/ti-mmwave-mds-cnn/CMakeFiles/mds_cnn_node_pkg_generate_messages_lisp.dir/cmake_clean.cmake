@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/mds_cnn_node_pkg_generate_messages_lisp"
-  "/home/ece561/Projects/ti_ros/devel/share/common-lisp/ros/mds_cnn_node_pkg/msg/MDSPred.lisp"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/share/common-lisp/ros/mds_cnn_node_pkg/msg/MDSPred.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

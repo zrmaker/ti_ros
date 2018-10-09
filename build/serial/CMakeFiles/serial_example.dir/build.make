@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ece561/Projects/ti_ros/src
+CMAKE_SOURCE_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ece561/Projects/ti_ros/build
+CMAKE_BINARY_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/build
 
 # Include any dependencies generated for this target.
 include serial/CMakeFiles/serial_example.dir/depend.make
@@ -58,17 +58,17 @@ include serial/CMakeFiles/serial_example.dir/progress.make
 include serial/CMakeFiles/serial_example.dir/flags.make
 
 serial/CMakeFiles/serial_example.dir/examples/serial_example.cc.o: serial/CMakeFiles/serial_example.dir/flags.make
-serial/CMakeFiles/serial_example.dir/examples/serial_example.cc.o: /home/ece561/Projects/ti_ros/src/serial/examples/serial_example.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ece561/Projects/ti_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object serial/CMakeFiles/serial_example.dir/examples/serial_example.cc.o"
-	cd /home/ece561/Projects/ti_ros/build/serial && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serial_example.dir/examples/serial_example.cc.o -c /home/ece561/Projects/ti_ros/src/serial/examples/serial_example.cc
+serial/CMakeFiles/serial_example.dir/examples/serial_example.cc.o: /mnt/c/Users/ryzhang/Downloads/ti_ros/src/serial/examples/serial_example.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/ryzhang/Downloads/ti_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object serial/CMakeFiles/serial_example.dir/examples/serial_example.cc.o"
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serial_example.dir/examples/serial_example.cc.o -c /mnt/c/Users/ryzhang/Downloads/ti_ros/src/serial/examples/serial_example.cc
 
 serial/CMakeFiles/serial_example.dir/examples/serial_example.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serial_example.dir/examples/serial_example.cc.i"
-	cd /home/ece561/Projects/ti_ros/build/serial && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ece561/Projects/ti_ros/src/serial/examples/serial_example.cc > CMakeFiles/serial_example.dir/examples/serial_example.cc.i
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/ryzhang/Downloads/ti_ros/src/serial/examples/serial_example.cc > CMakeFiles/serial_example.dir/examples/serial_example.cc.i
 
 serial/CMakeFiles/serial_example.dir/examples/serial_example.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serial_example.dir/examples/serial_example.cc.s"
-	cd /home/ece561/Projects/ti_ros/build/serial && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ece561/Projects/ti_ros/src/serial/examples/serial_example.cc -o CMakeFiles/serial_example.dir/examples/serial_example.cc.s
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/ryzhang/Downloads/ti_ros/src/serial/examples/serial_example.cc -o CMakeFiles/serial_example.dir/examples/serial_example.cc.s
 
 serial/CMakeFiles/serial_example.dir/examples/serial_example.cc.o.requires:
 
@@ -88,15 +88,15 @@ serial_example_OBJECTS = \
 # External object files for target serial_example
 serial_example_EXTERNAL_OBJECTS =
 
-/home/ece561/Projects/ti_ros/devel/lib/serial/serial_example: serial/CMakeFiles/serial_example.dir/examples/serial_example.cc.o
-/home/ece561/Projects/ti_ros/devel/lib/serial/serial_example: serial/CMakeFiles/serial_example.dir/build.make
-/home/ece561/Projects/ti_ros/devel/lib/serial/serial_example: /home/ece561/Projects/ti_ros/devel/lib/libserial.so
-/home/ece561/Projects/ti_ros/devel/lib/serial/serial_example: serial/CMakeFiles/serial_example.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ece561/Projects/ti_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/ece561/Projects/ti_ros/devel/lib/serial/serial_example"
-	cd /home/ece561/Projects/ti_ros/build/serial && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/serial_example.dir/link.txt --verbose=$(VERBOSE)
+/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/serial/serial_example: serial/CMakeFiles/serial_example.dir/examples/serial_example.cc.o
+/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/serial/serial_example: serial/CMakeFiles/serial_example.dir/build.make
+/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/serial/serial_example: /mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/libserial.so
+/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/serial/serial_example: serial/CMakeFiles/serial_example.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/ryzhang/Downloads/ti_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/serial/serial_example"
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/serial_example.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-serial/CMakeFiles/serial_example.dir/build: /home/ece561/Projects/ti_ros/devel/lib/serial/serial_example
+serial/CMakeFiles/serial_example.dir/build: /mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/serial/serial_example
 
 .PHONY : serial/CMakeFiles/serial_example.dir/build
 
@@ -105,10 +105,10 @@ serial/CMakeFiles/serial_example.dir/requires: serial/CMakeFiles/serial_example.
 .PHONY : serial/CMakeFiles/serial_example.dir/requires
 
 serial/CMakeFiles/serial_example.dir/clean:
-	cd /home/ece561/Projects/ti_ros/build/serial && $(CMAKE_COMMAND) -P CMakeFiles/serial_example.dir/cmake_clean.cmake
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial && $(CMAKE_COMMAND) -P CMakeFiles/serial_example.dir/cmake_clean.cmake
 .PHONY : serial/CMakeFiles/serial_example.dir/clean
 
 serial/CMakeFiles/serial_example.dir/depend:
-	cd /home/ece561/Projects/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ece561/Projects/ti_ros/src /home/ece561/Projects/ti_ros/src/serial /home/ece561/Projects/ti_ros/build /home/ece561/Projects/ti_ros/build/serial /home/ece561/Projects/ti_ros/build/serial/CMakeFiles/serial_example.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/ryzhang/Downloads/ti_ros/src /mnt/c/Users/ryzhang/Downloads/ti_ros/src/serial /mnt/c/Users/ryzhang/Downloads/ti_ros/build /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial /mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial/CMakeFiles/serial_example.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : serial/CMakeFiles/serial_example.dir/depend
 

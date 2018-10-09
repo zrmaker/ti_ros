@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ece561/Projects/ti_ros/src
+CMAKE_SOURCE_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ece561/Projects/ti_ros/build
+CMAKE_BINARY_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/build
 
 # Utility rule file for std_msgs_generate_messages_cpp.
 
@@ -63,10 +63,10 @@ ti-mmwave-mds-cnn/CMakeFiles/std_msgs_generate_messages_cpp.dir/build: std_msgs_
 .PHONY : ti-mmwave-mds-cnn/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 
 ti-mmwave-mds-cnn/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean:
-	cd /home/ece561/Projects/ti_ros/build/ti-mmwave-mds-cnn && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti-mmwave-mds-cnn && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : ti-mmwave-mds-cnn/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 
 ti-mmwave-mds-cnn/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend:
-	cd /home/ece561/Projects/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ece561/Projects/ti_ros/src /home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn /home/ece561/Projects/ti_ros/build /home/ece561/Projects/ti_ros/build/ti-mmwave-mds-cnn /home/ece561/Projects/ti_ros/build/ti-mmwave-mds-cnn/CMakeFiles/std_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/ryzhang/Downloads/ti_ros/src /mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn /mnt/c/Users/ryzhang/Downloads/ti_ros/build /mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti-mmwave-mds-cnn /mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti-mmwave-mds-cnn/CMakeFiles/std_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ti-mmwave-mds-cnn/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/ece561/Projects/ti_ros/src/serial
+# Install script for directory: /mnt/c/Users/ryzhang/Downloads/ti_ros/src/serial
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ece561/Projects/ti_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/mnt/c/Users/ryzhang/Downloads/ti_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,18 +33,18 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ece561/Projects/ti_ros/build/serial/catkin_generated/installspace/serial.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial/catkin_generated/installspace/serial.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/serial/cmake" TYPE FILE FILES
-    "/home/ece561/Projects/ti_ros/build/serial/catkin_generated/installspace/serialConfig.cmake"
-    "/home/ece561/Projects/ti_ros/build/serial/catkin_generated/installspace/serialConfig-version.cmake"
+    "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial/catkin_generated/installspace/serialConfig.cmake"
+    "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial/catkin_generated/installspace/serialConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/serial" TYPE FILE FILES "/home/ece561/Projects/ti_ros/src/serial/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/serial" TYPE FILE FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/serial/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -54,7 +54,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libserial.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ece561/Projects/ti_ros/devel/lib/libserial.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/libserial.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libserial.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libserial.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -65,14 +65,14 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/serial" TYPE FILE FILES
-    "/home/ece561/Projects/ti_ros/src/serial/include/serial/serial.h"
-    "/home/ece561/Projects/ti_ros/src/serial/include/serial/v8stdint.h"
+    "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/serial/include/serial/serial.h"
+    "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/serial/include/serial/v8stdint.h"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ece561/Projects/ti_ros/build/serial/tests/cmake_install.cmake")
+  include("/mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial/tests/cmake_install.cmake")
 
 endif()
 

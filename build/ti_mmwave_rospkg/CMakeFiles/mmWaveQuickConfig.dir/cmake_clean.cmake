@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/mmWaveQuickConfig.dir/src/mmWaveQuickConfig.cpp.o"
-  "/home/ece561/Projects/ti_ros/devel/lib/ti_mmwave_rospkg/mmWaveQuickConfig.pdb"
-  "/home/ece561/Projects/ti_ros/devel/lib/ti_mmwave_rospkg/mmWaveQuickConfig"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/ti_mmwave_rospkg/mmWaveQuickConfig.pdb"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/devel/lib/ti_mmwave_rospkg/mmWaveQuickConfig"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,8 @@
-# Install script for directory: /home/ece561/Projects/ti_ros/src
+# Install script for directory: /mnt/c/Users/ryzhang/Downloads/ti_ros/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ece561/Projects/ti_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/mnt/c/Users/ryzhang/Downloads/ti_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,83 +44,83 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/ece561/Projects/ti_ros/install/_setup_util.py")
+   "/mnt/c/Users/ryzhang/Downloads/ti_ros/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/ece561/Projects/ti_ros/install" TYPE PROGRAM FILES "/home/ece561/Projects/ti_ros/build/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/mnt/c/Users/ryzhang/Downloads/ti_ros/install" TYPE PROGRAM FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/ece561/Projects/ti_ros/install/env.sh")
+   "/mnt/c/Users/ryzhang/Downloads/ti_ros/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/ece561/Projects/ti_ros/install" TYPE PROGRAM FILES "/home/ece561/Projects/ti_ros/build/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/mnt/c/Users/ryzhang/Downloads/ti_ros/install" TYPE PROGRAM FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/catkin_generated/installspace/env.sh")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/ece561/Projects/ti_ros/install/setup.bash")
+   "/mnt/c/Users/ryzhang/Downloads/ti_ros/install/setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/ece561/Projects/ti_ros/install" TYPE FILE FILES "/home/ece561/Projects/ti_ros/build/catkin_generated/installspace/setup.bash")
+file(INSTALL DESTINATION "/mnt/c/Users/ryzhang/Downloads/ti_ros/install" TYPE FILE FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/catkin_generated/installspace/setup.bash")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/ece561/Projects/ti_ros/install/setup.sh")
+   "/mnt/c/Users/ryzhang/Downloads/ti_ros/install/setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/ece561/Projects/ti_ros/install" TYPE FILE FILES "/home/ece561/Projects/ti_ros/build/catkin_generated/installspace/setup.sh")
+file(INSTALL DESTINATION "/mnt/c/Users/ryzhang/Downloads/ti_ros/install" TYPE FILE FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/catkin_generated/installspace/setup.sh")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/ece561/Projects/ti_ros/install/setup.zsh")
+   "/mnt/c/Users/ryzhang/Downloads/ti_ros/install/setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/ece561/Projects/ti_ros/install" TYPE FILE FILES "/home/ece561/Projects/ti_ros/build/catkin_generated/installspace/setup.zsh")
+file(INSTALL DESTINATION "/mnt/c/Users/ryzhang/Downloads/ti_ros/install" TYPE FILE FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/catkin_generated/installspace/setup.zsh")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/ece561/Projects/ti_ros/install/.rosinstall")
+   "/mnt/c/Users/ryzhang/Downloads/ti_ros/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/ece561/Projects/ti_ros/install" TYPE FILE FILES "/home/ece561/Projects/ti_ros/build/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/mnt/c/Users/ryzhang/Downloads/ti_ros/install" TYPE FILE FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ece561/Projects/ti_ros/build/gtest/cmake_install.cmake")
-  include("/home/ece561/Projects/ti_ros/build/serial/cmake_install.cmake")
-  include("/home/ece561/Projects/ti_ros/build/ti-mmwave-mds-cnn/cmake_install.cmake")
-  include("/home/ece561/Projects/ti_ros/build/micro_doppler_pkg/cmake_install.cmake")
-  include("/home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg/cmake_install.cmake")
+  include("/mnt/c/Users/ryzhang/Downloads/ti_ros/build/gtest/cmake_install.cmake")
+  include("/mnt/c/Users/ryzhang/Downloads/ti_ros/build/serial/cmake_install.cmake")
+  include("/mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti-mmwave-mds-cnn/cmake_install.cmake")
+  include("/mnt/c/Users/ryzhang/Downloads/ti_ros/build/micro_doppler_pkg/cmake_install.cmake")
+  include("/mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg/cmake_install.cmake")
 
 endif()
 
@@ -132,5 +132,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ece561/Projects/ti_ros/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/Users/ryzhang/Downloads/ti_ros/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

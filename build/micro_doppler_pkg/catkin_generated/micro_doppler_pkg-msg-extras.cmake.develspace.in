@@ -1,2 +1,2 @@
-set(micro_doppler_pkg_MESSAGE_FILES "/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg;/home/ece561/Projects/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg")
+set(micro_doppler_pkg_MESSAGE_FILES "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler.msg;/mnt/c/Users/ryzhang/Downloads/ti_ros/src/micro_doppler_pkg/msg/MicroDoppler_m.msg")
 set(micro_doppler_pkg_SERVICE_FILES "")

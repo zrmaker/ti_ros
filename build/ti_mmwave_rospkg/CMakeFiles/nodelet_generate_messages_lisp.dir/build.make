@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ece561/Projects/ti_ros/src
+CMAKE_SOURCE_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ece561/Projects/ti_ros/build
+CMAKE_BINARY_DIR = /mnt/c/Users/ryzhang/Downloads/ti_ros/build
 
 # Utility rule file for nodelet_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ ti_mmwave_rospkg/CMakeFiles/nodelet_generate_messages_lisp.dir/build: nodelet_ge
 .PHONY : ti_mmwave_rospkg/CMakeFiles/nodelet_generate_messages_lisp.dir/build
 
 ti_mmwave_rospkg/CMakeFiles/nodelet_generate_messages_lisp.dir/clean:
-	cd /home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg && $(CMAKE_COMMAND) -P CMakeFiles/nodelet_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg && $(CMAKE_COMMAND) -P CMakeFiles/nodelet_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : ti_mmwave_rospkg/CMakeFiles/nodelet_generate_messages_lisp.dir/clean
 
 ti_mmwave_rospkg/CMakeFiles/nodelet_generate_messages_lisp.dir/depend:
-	cd /home/ece561/Projects/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ece561/Projects/ti_ros/src /home/ece561/Projects/ti_ros/src/ti_mmwave_rospkg /home/ece561/Projects/ti_ros/build /home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg /home/ece561/Projects/ti_ros/build/ti_mmwave_rospkg/CMakeFiles/nodelet_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/ryzhang/Downloads/ti_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/ryzhang/Downloads/ti_ros/src /mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti_mmwave_rospkg /mnt/c/Users/ryzhang/Downloads/ti_ros/build /mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg /mnt/c/Users/ryzhang/Downloads/ti_ros/build/ti_mmwave_rospkg/CMakeFiles/nodelet_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ti_mmwave_rospkg/CMakeFiles/nodelet_generate_messages_lisp.dir/depend
 

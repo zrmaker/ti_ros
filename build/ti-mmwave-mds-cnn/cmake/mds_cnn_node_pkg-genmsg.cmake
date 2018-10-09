@@ -2,7 +2,7 @@
 
 message(STATUS "mds_cnn_node_pkg: 1 messages, 0 services")
 
-set(MSG_I_FLAGS "-Imds_cnn_node_pkg:/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Imds_cnn_node_pkg:/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,9 +17,9 @@ add_custom_target(mds_cnn_node_pkg_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg" NAME_WE)
+get_filename_component(_filename "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg" NAME_WE)
 add_custom_target(_mds_cnn_node_pkg_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mds_cnn_node_pkg" "/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mds_cnn_node_pkg" "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg" "std_msgs/Header"
 )
 
 #
@@ -29,7 +29,7 @@ add_custom_target(_mds_cnn_node_pkg_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(mds_cnn_node_pkg
-  "/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mds_cnn_node_pkg
@@ -49,7 +49,7 @@ add_custom_target(mds_cnn_node_pkg_generate_messages_cpp
 add_dependencies(mds_cnn_node_pkg_generate_messages mds_cnn_node_pkg_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg" NAME_WE)
+get_filename_component(_filename "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg" NAME_WE)
 add_dependencies(mds_cnn_node_pkg_generate_messages_cpp _mds_cnn_node_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -62,7 +62,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS mds_cnn_node_pkg_generate_messages_
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(mds_cnn_node_pkg
-  "/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mds_cnn_node_pkg
@@ -82,7 +82,7 @@ add_custom_target(mds_cnn_node_pkg_generate_messages_eus
 add_dependencies(mds_cnn_node_pkg_generate_messages mds_cnn_node_pkg_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg" NAME_WE)
+get_filename_component(_filename "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg" NAME_WE)
 add_dependencies(mds_cnn_node_pkg_generate_messages_eus _mds_cnn_node_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -95,7 +95,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS mds_cnn_node_pkg_generate_messages_
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(mds_cnn_node_pkg
-  "/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mds_cnn_node_pkg
@@ -115,7 +115,7 @@ add_custom_target(mds_cnn_node_pkg_generate_messages_lisp
 add_dependencies(mds_cnn_node_pkg_generate_messages mds_cnn_node_pkg_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg" NAME_WE)
+get_filename_component(_filename "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg" NAME_WE)
 add_dependencies(mds_cnn_node_pkg_generate_messages_lisp _mds_cnn_node_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -128,7 +128,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS mds_cnn_node_pkg_generate_messages_
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(mds_cnn_node_pkg
-  "/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mds_cnn_node_pkg
@@ -148,7 +148,7 @@ add_custom_target(mds_cnn_node_pkg_generate_messages_nodejs
 add_dependencies(mds_cnn_node_pkg_generate_messages mds_cnn_node_pkg_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg" NAME_WE)
+get_filename_component(_filename "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg" NAME_WE)
 add_dependencies(mds_cnn_node_pkg_generate_messages_nodejs _mds_cnn_node_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -161,7 +161,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS mds_cnn_node_pkg_generate_messages_
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(mds_cnn_node_pkg
-  "/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg"
+  "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mds_cnn_node_pkg
@@ -181,7 +181,7 @@ add_custom_target(mds_cnn_node_pkg_generate_messages_py
 add_dependencies(mds_cnn_node_pkg_generate_messages mds_cnn_node_pkg_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ece561/Projects/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg" NAME_WE)
+get_filename_component(_filename "/mnt/c/Users/ryzhang/Downloads/ti_ros/src/ti-mmwave-mds-cnn/msg/MDSPred.msg" NAME_WE)
 add_dependencies(mds_cnn_node_pkg_generate_messages_py _mds_cnn_node_pkg_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
